@@ -28,7 +28,7 @@
         <script>
             document.getElementById("loginForm").addEventListener("submit", function(event) {
                 event.preventDefault(); 
-                window.location.href = "../Frontend EcomXpress/home.html";
+                window.location.href = "../FrontendEcomXpress/home.php";
             });
             </script>
     </div>

@@ -20,7 +20,7 @@
         </form>
 
         <div class="register-link">
-            <p>Don't have an account? <a href="E-comXpress Registration Page.html">Register here</a></p>
+            <p>Don't have an account? <a href="E-comXpress Registration Page.php">Register here</a></p>
         </div>
     </div>
     

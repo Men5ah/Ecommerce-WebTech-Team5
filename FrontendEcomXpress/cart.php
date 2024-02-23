@@ -303,7 +303,7 @@
                             <h5>Total</h5>
                             <h5>$160</h5>
                         </div>
-                        <button class="btn btn-block btn-primary font-weight-bold my-3 py-3" onclick="window.location.href = 'checkout.html';">Proceed To Checkout</button>
+                        <button class="btn btn-block btn-primary font-weight-bold my-3 py-3" onclick="window.location.href = 'checkout.php';">Proceed To Checkout</button>
                     </div>
                 </div>
             </div>

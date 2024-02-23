@@ -335,7 +335,7 @@
                                 </div>
                             </div>
                             <div class="text-center py-4">
-                                <a class="h6 text-decoration-none text-truncate" href="detail 1.html">Quilt Bag Brown</a>
+                                <a class="h6 text-decoration-none text-truncate" href="detail 1.php">Quilt Bag Brown</a>
                                 <div class="d-flex align-items-center justify-content-center mt-2">
                                     <h5>GHC 150.00</h5>
                                 </div>
