@@ -28,11 +28,10 @@
         <script>
             document.getElementById("loginForm").addEventListener("submit", function(event) {
                 event.preventDefault(); 
-                window.location.href = "home.html";
+                window.location.href = "../Frontend EcomXpress/home.html";
             });
             </script>
     </div>
     
 </body>
 </html>
-
