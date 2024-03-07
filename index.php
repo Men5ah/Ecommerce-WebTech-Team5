@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="login.css">
 </head>
 
-<!-- iufghbrdsuhjfbsdukbvfsd -->
 <body>
     <div class="login-container">
         <h2>Sign in</h2>
@@ -24,7 +23,7 @@
         
 
         <div class="register-link">
-            <p>Don't have an account? <a href="register.html">Register here</a></p>
+            <p>Don't have an account? <a href="E-comXpress Registration Page.php.html">Register here</a></p>
         </div>
         
         <script>
@@ -37,3 +36,5 @@
     
 </body>
 </html>
+
+<!-- http://localhost/Web Technologies Team Folder/GitHub/Ecommerce-WebTech-Team5/index.php -->

@@ -38,3 +38,5 @@
     
 </body>
 </html>
+
+<!-- http://localhost/Web Technologies Team Folder/GitHub/Ecommerce-WebTech-Team5/E-comXpress Registration Page.php -->
