@@ -4,14 +4,14 @@ USE Commerce;
 
 CREATE TABLE Person (
     person_id INT PRIMARY KEY AUTO_INCREMENT,
-    fname VARCHAR(55) not NULL,
-    lname VARCHAR(55) not NULL,
-    Email VARCHAR(105) UNIQUE not NULL,
-    Password VARCHAR(155) not null,
-    Phone_Number VARCHAR(11) not NULL,
-    City ENUM ('Accra', 'Kumasi', 'Tamale', 'Takoradi', 'Tema', 'Cape Coast') not NULL,
-    Street VARCHAR(255) not NULL,
-    Role ENUM('User', 'Seller')
+    fname VARCHAR(55) NOT NULL,
+    lname VARCHAR(55) NOT NULL,
+    Email VARCHAR(105) UNIQUE NOT NULL,
+    Password VARCHAR(155) NOT NULL,
+    Phone_Number VARCHAR(11) NOT NULL,
+    City ENUM ('Accra', 'Kumasi', 'Tamale', 'Takoradi', 'Tema', 'Cape Coast') NOT NULL,
+    Street VARCHAR(255) NOT NULL,
+    Role ENUM('User', 'Seller') NOT NULL
 );
 
 CREATE TABLE Categories (
@@ -28,6 +28,17 @@ CREATE TABLE Product (
     quantity_available INT,
     category_id INT,
     FOREIGN KEY (category_id) REFERENCES Categories(category_id)
+);
+
+CREATE TABLE Orders (
+    order_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    total_amount DECIMAL(10, 2),
+    status ENUM('Pending', 'Processing', 'Shipped', 'Delivered', 'Cancelled') DEFAULT 'Pending',
+    payment_method VARCHAR(50),
+    shipping_address VARCHAR(255),
+    FOREIGN KEY (user_id) REFERENCES Person(person_id)
 );
 
 CREATE TABLE Carts (
