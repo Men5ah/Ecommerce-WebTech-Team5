@@ -590,3 +590,5 @@
 </body>
 
 </html>
+
+<!-- http://localhost/Web Technologies Team Folder/GitHub/Ecommerce-WebTech-Team5/FrontendEcomXpress/detail 1.php -->
