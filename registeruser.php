@@ -1,0 +1,31 @@
+<?php
+include "connection.php";
+
+// Get user input
+$firstName = $_POST['firstName'];
+$lastName = $_POST['lastName'];
+$email = $_POST['email'];
+$password = $_POST['Password']; // Assuming the password is plain text here
+$phoneNumber = $_POST['phone'];
+$location = $_POST['location'];
+$role = $_POST['role'];
+
+// Hash the password
+$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+// Use prepared statement for insertion
+$sql = "INSERT INTO person (fname, lname, Email, Password, Phone_Number, City, role) VALUES (?, ?, ?, ?, ?, ?, ?)";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("sssssss", $firstName, $lastName, $email, $hashedPassword, $phoneNumber, $location, $role);
+
+if ($stmt->execute()) {
+    // echo "User registered successfully";
+    header("Location: E-comXpress Login page.php");
+    exit;
+} else {
+    error_log("SQL Error: " . $sql . " - " . $stmt->error);
+    echo "Something went wrong. Please try again later.";
+}
+
+$stmt->close();
+$conn->close();
