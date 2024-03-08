@@ -1,5 +1,5 @@
 <?php
-include "connection.php";
+include "../settings/connection.php";
 session_start();
 
 $LoginError = "";
@@ -25,7 +25,7 @@ if (isset($_POST['email']) && isset($_POST['Password'])) {
         if (password_verify($password, $current_user["Password"])) {
             $_SESSION['user_ID'] = $current_user['person_id'];
 
-            header("Location: ../Ecommerce-WebTech-Team5/FrontendEcomXpress/home.php");
+            header("Location: ../../FrontendEcomXpress/home.php");
             exit();
         } else {
             echo "Invalid Email or Password!";
