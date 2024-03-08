@@ -13,7 +13,7 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -29,71 +29,71 @@
 <body>
     <!-- Topbar Start -->
     <div class="container-fluid">
-        
-            </div>
-            <div class="col-lg-6 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">My Account</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">Sign in</button>
-                            <button class="dropdown-item" type="button">Sign up</button>
-                            <button class="dropdown-item" type="button">Help</button>
-                        </div>
-                    </div>
-                    <div class="btn-group mx-2">
-                        <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">CEDIS</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">EUR</button>
-                            <button class="dropdown-item" type="button">GBP</button>
-                            <button class="dropdown-item" type="button">CAD</button>
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">EN</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">FR</button>
-                            <button class="dropdown-item" type="button">AF</button>
-                            <button class="dropdown-item" type="button">RU</button>
-                        </div>
-                    </div>
+
+    </div>
+    <div class="col-lg-6 text-center text-lg-right">
+        <div class="d-inline-flex align-items-center">
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">My Account</button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <button class="dropdown-item" type="button">Sign in</button>
+                    <button class="dropdown-item" type="button">Sign up</button>
+                    <button class="dropdown-item" type="button">Help</button>
                 </div>
-                <div class="d-inline-flex align-items-center d-block d-lg-none">
-                    <a href="" class="btn px-0 ml-2">
-                        <i class="fas fa-heart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
-                    </a>
-                    <a href="" class="btn px-0 ml-2">
-                        <i class="fas fa-shopping-cart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
-                    </a>
+            </div>
+            <div class="btn-group mx-2">
+                <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">CEDIS</button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <button class="dropdown-item" type="button">EUR</button>
+                    <button class="dropdown-item" type="button">GBP</button>
+                    <button class="dropdown-item" type="button">CAD</button>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">EN</button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <button class="dropdown-item" type="button">FR</button>
+                    <button class="dropdown-item" type="button">AF</button>
+                    <button class="dropdown-item" type="button">RU</button>
                 </div>
             </div>
         </div>
-        <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
-            <div class="col-lg-4">
-                <a href="" class="text-decoration-none">
-                    <span class="">Welcome</span>
-                    <span class="">Shopper</span>
-                </a>
-            </div>
-            <div class="col-lg-4 col-6 text-left">
-                <form action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for products">
-                        <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
-                                <i class="fa fa-search"></i>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-lg-4 col-6 text-right">
-                <p class="m-0">Customer Service</p>
-                <h5 class="m-0">002233456789</h5>
-            </div>
+        <div class="d-inline-flex align-items-center d-block d-lg-none">
+            <a href="" class="btn px-0 ml-2">
+                <i class="fas fa-heart text-dark"></i>
+                <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+            </a>
+            <a href="" class="btn px-0 ml-2">
+                <i class="fas fa-shopping-cart text-dark"></i>
+                <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+            </a>
         </div>
+    </div>
+    </div>
+    <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
+        <div class="col-lg-4">
+            <a href="" class="text-decoration-none">
+                <span class="">Welcome</span>
+                <span class="">Shopper</span>
+            </a>
+        </div>
+        <div class="col-lg-4 col-6 text-left">
+            <form action="../FrontendEcomXpress/actions/search_action.php" method="POST">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchQuery" name="searchQuery" placeholder="Search for products">
+                    <div class="input-group-append">
+                        <span class="input-group-text bg-transparent text-primary">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-4 col-6 text-right">
+            <p class="m-0">Customer Service</p>
+            <h5 class="m-0">002233456789</h5>
+        </div>
+    </div>
     </div>
     <!-- Topbar End -->
 
@@ -102,15 +102,15 @@
     <div class="container-fluid bg-dark mb-30">
         <div class="row px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                    <a href="home.html" class="text-decoration-none">
-                        <span class="h1 text-uppercase text-primary bg-dark px-2">Ecom</span>
-                        <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Xpress</span>
-                    </a>
-                    <i class="fa fa-angle-down text-dark"></i>
+                <a href="home.php" class="text-decoration-none">
+                    <span class="h1 text-uppercase text-primary bg-dark px-2">Ecom</span>
+                    <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Xpress</span>
+                </a>
+                <i class="fa fa-angle-down text-dark"></i>
                 </a>
                 <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
-                   
-                        
+
+
                 </nav>
             </div>
             <div class="col-lg-9">
@@ -124,23 +124,23 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="home.html" class="nav-item nav-link">Home</a>
+                            <a href="home.php" class="nav-item nav-link">Home</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories<i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="shop fashion.html" class="dropdown-item">Fashion</a>
-                                    <a href="shop electronics.html" class="dropdown-item">Electronics</a>
-                                    <a href="shop skincare.html" class="dropdown-item">Skincare</a>
-                                    <a href="shop stationery.html" class="dropdown-item">Stationery</a>
-                                    <a href="shop hygiene.html" class="dropdown-item">Hygiene</a>
-                                    <a href="shop fruits and veggies.html" class="dropdown-item">Fruit&Veggies</a>
+                                    <a href="shop fashion.php" class="dropdown-item">Fashion</a>
+                                    <a href="shop electronics.php" class="dropdown-item">Electronics</a>
+                                    <a href="shop skincare.php" class="dropdown-item">Skincare</a>
+                                    <a href="shop stationery.php" class="dropdown-item">Stationery</a>
+                                    <a href="shop hygiene.php" class="dropdown-item">Hygiene</a>
+                                    <a href="shop fruits and veggies.php" class="dropdown-item">Fruit&Veggies</a>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="contact.php" class="nav-item nav-link">Contact</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
-                            
-                            <a href="cart.html" class="btn px-0 ml-3">
+
+                            <a href="cart.php" class="btn px-0 ml-3">
                                 <i class="fas fa-shopping-cart text-primary"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
@@ -170,7 +170,7 @@
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Fruits & Veggies</h1>
                                     <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Fresh fruits and veggies at your convenience</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="shop fruits and veggies.html">Shop Now</a>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="shop fruits and veggies.php">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -180,7 +180,7 @@
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Stationery</h1>
                                     <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Stay study with quality stationery.</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="shop stationery.html">Shop Now</a>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="shop stationery.php">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -190,7 +190,7 @@
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Fashion</h1>
                                     <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Add to Cart!!Add to Wadrobe!!</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="shop fashion.html">Shop Now</a>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="shop fashion.php">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -203,7 +203,7 @@
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase">Save 20% on delivery</h6>
                         <h3 class="text-white mb-3">On SkinCare</h3>
-                        <a href="shop skincare.html" class="btn btn-primary">Shop Now</a>
+                        <a href="shop skincare.php" class="btn btn-primary">Shop Now</a>
                     </div>
                 </div>
                 <div class="product-offer mb-30" style="height: 200px;">
@@ -211,7 +211,7 @@
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase">Save 50% on delivery</h6>
                         <h3 class="text-white mb-3">Special Friday offer</h3>
-                        <a href="shop electronics.html" class="btn btn-primary">Shop Now</a>
+                        <a href="shop electronics.php" class="btn btn-primary">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -257,7 +257,7 @@
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Categories</span></h2>
         <div class="row px-xl-5 pb-3">
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="shop fashion.html">
+                <a class="text-decoration-none" href="shop fashion.php">
                     <div class="cat-item d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 250px; height: 200px;">
                             <img class="img-fluid" src="img/priscilla-du-preez-dlxLGIy-2VU-unsplash.jpg" alt="">
@@ -270,17 +270,17 @@
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="shop electronics.html">
-                   
+                <a class="text-decoration-none" href="shop electronics.php">
+
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="shop 2.html">
-                   
+                <a class="text-decoration-none" href="shop 2.php">
+
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="shop skincare.html">
+                <a class="text-decoration-none" href="shop skincare.php">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 250px; height: 200px;">
                             <img class="img-fluid" src="img/content-pixie-0z4h9qneDMA-unsplash.jpg" alt="">
@@ -293,7 +293,7 @@
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="shop stationery.html">
+                <a class="text-decoration-none" href="shop stationery.php">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 250px; height: 200px;">
                             <img class="img-fluid" src="img/tim-gouw-KigTvXqetXA-unsplash.jpg" alt="">
@@ -306,13 +306,13 @@
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                
+
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-            
+
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="shop hygiene.html">
+                <a class="text-decoration-none" href="shop hygiene.php">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 250px; height: 200px;">
                             <img class="img-fluid" src="img/kelly-sikkema-xp-ND7NjWaA-unsplash.jpg" alt="">
@@ -325,7 +325,7 @@
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="shop fruits and veggies.html">
+                <a class="text-decoration-none" href="shop fruits and veggies.php">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 250px; height: 200px;">
                             <img class="img-fluid" src="img/hunters-race-MYbhN8KaaEc-unsplash.jpg" alt="">
@@ -338,13 +338,13 @@
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                
+
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-               
+
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="shop electronics.html">
+                <a class="text-decoration-none" href="shop electronics.php">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 250px; height: 200px;">
                             <img class="img-fluid" src="img/vadim-sherbakov-tCICLJ5ktBE-unsplash.jpg" alt="">
@@ -379,7 +379,8 @@
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Books</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>120.00</del></h6>
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ml-2"><del>120.00</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -406,7 +407,8 @@
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -433,7 +435,8 @@
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Dettol</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>GHC 123.00</h5><h6 class="text-muted ml-2"><del></del></h6>
+                            <h5>GHC 123.00</h5>
+                            <h6 class="text-muted ml-2"><del></del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -460,7 +463,8 @@
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href=""></a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -487,7 +491,8 @@
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -514,7 +519,8 @@
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -541,7 +547,8 @@
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -568,7 +575,8 @@
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -604,7 +612,8 @@
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -631,7 +640,8 @@
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -658,7 +668,8 @@
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -685,7 +696,8 @@
                     <div class="text-center py-4">
                         <a class="h6 text-decoration-none text-truncate" href="">Product Name Goes Here</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
-                            <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h5>$123.00</h5>
+                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
                         <div class="d-flex align-items-center justify-content-center mb-1">
                             <small class="fa fa-star text-primary mr-1"></small>
@@ -698,11 +710,11 @@
                     </div>
                 </div>
             </div>
-          
-                    </div>
-                </div>
-            </div>
+
         </div>
+    </div>
+    </div>
+    </div>
     </div>
     <!-- Products End -->
 
@@ -717,40 +729,40 @@
                 <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>ecomxpress@gmail.com</p>
                 <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>0200342465</p>
             </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">My Account</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Categories</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Details</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Cart</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                            <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+            <div class="col-md-4 mb-5">
+                <h5 class="text-secondary text-uppercase mb-4">My Account</h5>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Categories</a>
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Details</a>
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Cart</a>
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
+                    <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <h5 class="text-secondary text-uppercase mb-4">Newsletter</h5>
+                <p>For Promotion,Sales and Discounts </p>
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Your Email Address">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary">Sign Up</button>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">Newsletter</h5>
-                        <p>For Promotion,Sales and Discounts </p>
-                        <form action="">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Your Email Address">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary">Sign Up</button>
-                                </div>
-                            </div>
-                        </form>
-                        <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
-                        <div class="d-flex">
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
+                </form>
+                <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
+                <div class="d-flex">
+                    <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
-       
+    </div>
+    </div>
+
     <!-- Footer End -->
 
 

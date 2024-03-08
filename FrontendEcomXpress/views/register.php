@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="Registration.css">
-    
+    <link rel="stylesheet" href="../css/register.css">
+
     <script src="register page validation.js" defer></script>
 </head>
+
 <body>
     <div class="container">
         <h2>Getting started</h2>
-        <form action="registeruser.php" method="post" name="registrationForm" id="registrationForm">
+        <form action="../actions/register_action.php" method="post" name="registrationForm" id="registrationForm">
             <label for="firstName">First Name</label>
             <input type="text" name="firstName" id="firstName" placeholder="Enter your first name" required>
 
@@ -35,12 +37,13 @@
             <input type="text" name="role" id="role" placeholder="Enter your role" required>
 
             <button type="submit" name="registerBtn" id="registerBtn">Register</button>
-            
-            <p>Already have an account? <a href="E-comXpress Login page.php"> Login</a></p>
+
+            <p>Already have an account? <a href="../views/login.php"> Login</a></p>
         </form>
     </div>
-    
+
 </body>
+
 </html>
 
-<!-- http://localhost/Web Technologies Team Folder/GitHub/Ecommerce-WebTech-Team5/E-comXpress Registration Page.php -->
+<!-- http://localhost/Web Technologies Team Folder/GitHub/Ecommerce-WebTech-Team5/FrontendEcomXpress/views/register.php -->

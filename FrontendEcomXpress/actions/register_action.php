@@ -1,5 +1,5 @@
 <?php
-include "connection.php";
+include "../settings/connection.php";
 
 // Get user input
 $firstName = $_POST['firstName'];
@@ -20,7 +20,7 @@ $stmt->bind_param("sssssss", $firstName, $lastName, $email, $hashedPassword, $ph
 
 if ($stmt->execute()) {
     // echo "User registered successfully";
-    header("Location: E-comXpress Login page.php");
+    header("Location: ../views/login.php");
     exit;
 } else {
     error_log("SQL Error: " . $sql . " - " . $stmt->error);

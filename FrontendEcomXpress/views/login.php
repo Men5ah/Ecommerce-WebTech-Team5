@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login page</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
     <div class="login-container">
         <h2>Sign in</h2>
-        <form action="login_user.php" method="post" name="loginForm" id="loginForm">
+        <form action="../actions/login_action.php" method="post" name="loginForm" id="loginForm">
             <label for="email">Email</label>
             <input type="email" name="email" id="email" placeholder="Enter your email" required>
 
@@ -22,7 +22,7 @@
         </form>
 
         <div class="register-link">
-            <p>Don't have an account? <a href="E-comXpress Registration Page.php">Register here</a></p>
+            <p>Don't have an account? <a href="../views/register.php">Register here</a></p>
         </div>
     </div>
 
@@ -30,4 +30,4 @@
 
 </html>
 
-<!-- http://localhost/Web Technologies Team Folder/GitHub/Ecommerce-WebTech-Team5/E-comXpress Login page.php -->
+<!-- http://localhost/Web Technologies Team Folder/GitHub/Ecommerce-WebTech-Team5/views/login.php -->
