@@ -7,7 +7,7 @@
     <title>Register</title>
     <link rel="stylesheet" href="../css/register.css">
 
-    <script src="../../FrontendEcomXpress/register.js" defer></script>
+    <script src="../js/register.js" defer></script>
 </head>
 
 <body>
