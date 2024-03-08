@@ -46,4 +46,5 @@
 
 </html>
 
+
 <!-- http://localhost/Web Technologies Team Folder/GitHub/Ecommerce-WebTech-Team5/FrontendEcomXpress/views/register.php -->
