@@ -7,7 +7,7 @@
     <title>Register</title>
     <link rel="stylesheet" href="../css/register.css">
 
-    <script src="register page validation.js" defer></script>
+    <script src="../js/register.js" defer></script>
 </head>
 
 <body>
