@@ -1,3 +1,9 @@
+<?php
+include "../FrontendEcomXpress/settings/core.php";
+// redirectID();
+checkLogin();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -128,12 +134,12 @@
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories<i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="shop fashion.php" class="dropdown-item">Fashion</a>
-                                    <a href="shop electronics.php" class="dropdown-item">Electronics</a>
-                                    <a href="shop skincare.php" class="dropdown-item">Skincare</a>
-                                    <a href="shop stationery.php" class="dropdown-item">Stationery</a>
-                                    <a href="shop hygiene.php" class="dropdown-item">Hygiene</a>
-                                    <a href="shop fruits and veggies.php" class="dropdown-item">Fruit&Veggies</a>
+                                    <a href="../FrontendEcomXpress/shop fashion.php" class="dropdown-item">Fashion</a>
+                                    <a href="../FrontendEcomXpress/shop electronics.php" class="dropdown-item">Electronics</a>
+                                    <a href="../FrontendEcomXpress/shop skincare.php" class="dropdown-item">Skincare</a>
+                                    <a href="../FrontendEcomXpress/shop stationery.php" class="dropdown-item">Stationery</a>
+                                    <a href="../FrontendEcomXpress/shop hygiene.php" class="dropdown-item">Hygiene</a>
+                                    <a href="../FrontendEcomXpress/shop fruits and veggies.php" class="dropdown-item">Fruit&Veggies</a>
                                 </div>
                             </div>
                             <a href="contact.php" class="nav-item nav-link">Contact</a>
@@ -785,3 +791,4 @@
 </body>
 
 </html>
+
