@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -170,6 +175,10 @@
                     </thead>
                     <tbody class="align-middle">
                         <tr>
+                            <?php
+                                include "../FrontendEcomXpress/actions/display_cart_action.php";
+                                displayCartItems();
+                            ?>
                             <td class="align-middle"><img src="img/product-1.jpg" alt="" style="width: 50px;"> Product Name</td>
                             <td class="align-middle">$150</td>
                             <td class="align-middle">
