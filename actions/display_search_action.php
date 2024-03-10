@@ -2,7 +2,7 @@
 
 function displayElectronicProducts()
 {
-    include "../FrontendEcomXpress/settings/connection.php";
+    include "../settings/connection.php";
 
     $sql = "SELECT * FROM Product WHERE category_id = 1";
 
@@ -23,7 +23,7 @@ function displayElectronicProducts()
                 echo '<div class="product-img position-relative overflow-hidden">';
                 echo '<img class="img-fluid w-100" src="' . $imagePath . '" alt="' . $productName . '">';
                 echo '<div class="product-action">';
-                echo '<a class="btn btn-outline-dark btn-square" href="../FrontendEcomXpress/actions/cart_action.php"><i class="fa fa-shopping-cart"></i></a>';
+                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm_action.php?productId=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>';
@@ -58,7 +58,7 @@ function displayElectronicProducts()
 
 function displayFashionProducts()
 {
-    include "../FrontendEcomXpress/settings/connection.php";
+    include "../settings/connection.php";
 
     $sql = "SELECT * FROM Product WHERE category_id = 2";
 
@@ -79,7 +79,7 @@ function displayFashionProducts()
                 echo '<div class="product-img position-relative overflow-hidden">';
                 echo '<img class="img-fluid w-100" src="' . $imagePath . '" alt="' . $productName . '">';
                 echo '<div class="product-action">';
-                echo '<a class="btn btn-outline-dark btn-square" href="../FrontendEcomXpress/actions/cart_action.php"><i class="fa fa-shopping-cart"></i></a>';
+                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm_action.php?productId=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>';
@@ -112,9 +112,9 @@ function displayFashionProducts()
 }
 
 
-function displayStationaryProducts()
+function displayStationeryProducts()
 {
-    include "../FrontendEcomXpress/settings/connection.php";
+    include "../settings/connection.php";
 
     $sql = "SELECT * FROM Product WHERE category_id = 3";
 
@@ -135,19 +135,7 @@ function displayStationaryProducts()
                 echo '<div class="product-img position-relative overflow-hidden">';
                 echo '<img class="img-fluid w-100" src="' . $imagePath . '" alt="' . $productName . '">';
                 echo '<div class="product-action">';
-
-                // Replace the anchor tag with a form
-                // echo '<form action="../FrontendEcomXpress/actions/cart_action.php" method="POST">';
-                // echo '<button type="submit" class="btn btn-outline-dark btn-square" name="addToCart" value="' . $productId . '">';
-                // echo '<i class="fa fa-shopping-cart"></i>';
-                // echo '</button>';
-                // echo '</form>';
-
-                // echo '<a class="btn btn-outline-dark btn-square" href="../FrontendEcomXpress/actions/confirm_action.php"><i class="fa fa-shopping-cart"></i></a>';
-                
-                echo '<a class="btn btn-outline-dark btn-square" href="../FrontendEcomXpress/actions/confirm_action.php?productId=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
-
-                
+                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm_action.php?productId=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>';
@@ -182,7 +170,7 @@ function displayStationaryProducts()
 
 function displaySkincareProducts()
 {
-    include "../FrontendEcomXpress/settings/connection.php";
+    include "../settings/connection.php";
 
     $sql = "SELECT * FROM Product WHERE category_id = 4";
 
@@ -203,7 +191,7 @@ function displaySkincareProducts()
                 echo '<div class="product-img position-relative overflow-hidden">';
                 echo '<img class="img-fluid w-100" src="' . $imagePath . '" alt="' . $productName . '">';
                 echo '<div class="product-action">';
-                echo '<a class="btn btn-outline-dark btn-square" href="../FrontendEcomXpress/actions/cart_action.php"><i class="fa fa-shopping-cart"></i></a>';
+                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm_action.php?productId=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>';
@@ -238,7 +226,7 @@ function displaySkincareProducts()
 
 function displayFoodProducts()
 {
-    include "../FrontendEcomXpress/settings/connection.php";
+    include "../settings/connection.php";
 
     $sql = "SELECT * FROM Product WHERE category_id = 5";
 
@@ -259,7 +247,7 @@ function displayFoodProducts()
                 echo '<div class="product-img position-relative overflow-hidden">';
                 echo '<img class="img-fluid w-100" src="' . $imagePath . '" alt="' . $productName . '">';
                 echo '<div class="product-action">';
-                echo '<a class="btn btn-outline-dark btn-square" href="../FrontendEcomXpress/actions/cart_action.php"><i class="fa fa-shopping-cart"></i></a>';
+                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm_action.php?productId=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>';
@@ -294,7 +282,7 @@ function displayFoodProducts()
 
 function displayHygieneProducts()
 {
-    include "../FrontendEcomXpress/settings/connection.php";
+    include "../settings/connection.php";
 
     $sql = "SELECT * FROM Product WHERE category_id = 6";
 
@@ -315,7 +303,7 @@ function displayHygieneProducts()
                 echo '<div class="product-img position-relative overflow-hidden">';
                 echo '<img class="img-fluid w-100" src="' . $imagePath . '" alt="' . $productName . '">';
                 echo '<div class="product-action">';
-                echo '<a class="btn btn-outline-dark btn-square" href="../FrontendEcomXpress/actions/cart_action.php"><i class="fa fa-shopping-cart"></i></a>';
+                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm_action.php?productId=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>';

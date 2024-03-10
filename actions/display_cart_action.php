@@ -1,7 +1,7 @@
 <?php
-include "../FrontendEcomXpress/settings/core.php";
-include "../FrontendEcomXpress/settings/connection.php";
-// include "../FrontendEcomXpress/actions/login_action.php";
+include "../settings/core.php";
+include "../settings/connection.php";
+// include "../actions/login_action.php";
 
 
 if (isset($_SESSION['user_id'])) {
@@ -15,7 +15,7 @@ if (isset($_SESSION['user_id'])) {
 function displayCartItems()
 {
 
-    include "../FrontendEcomXpress/settings/connection.php";
+    include "../settings/connection.php";
     $userId = $_SESSION['user_id'];
 
     $cartQuery = "SELECT c.cart_id, p.product_id, p.name AS product_name, p.price, c.quantity
@@ -41,25 +41,33 @@ function displayCartItems()
             echo '<td class="align-middle">$' . $price . '</td>';
             echo '<td class="align-middle">
                     <div class="input-group quantity mx-auto" style="width: 100px;">
-                        <div class="input-group-btn">
-                            <button class="btn btn-sm btn-primary btn-minus" data-cart-id="' . $cartId . '">
-                                <i class="fa fa-minus"></i>
-                            </button>
-                        </div>
+                        <form action="../actions/reduce_quantity_action.php" method="post">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-sm btn-primary btn-minus" name="cart_id" value="' . $cartId . '">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                        </form>
                         <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" value="' . $quantity . '">
-                        <div class="input-group-btn">
-                            <button class="btn btn-sm btn-primary btn-plus" data-cart-id="' . $cartId . '">
-                                <i class="fa fa-plus"></i>
-                            </button>
-                        </div>
+                        <form action="../actions/increase_quantity_action.php" method="post">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-sm btn-primary btn-plus" name="cart_id" value="' . $cartId . '">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </td>';
             echo '<td class="align-middle">$' . $subtotal . '</td>';
+            echo '<form action="../actions/delete_item_action.php" method="POST">';
+            echo '<input type="hidden" name="cart_id" value="' . $cartId . '">';
             echo '<td class="align-middle">
-                    <button class="btn btn-sm btn-danger" onclick="removeFromCart(' . $cartId . ')">
+                    <button type="submit" class="btn btn-sm btn-danger">
                         <i class="fa fa-times"></i>
                     </button>
-                </td>';
+                  </td>';
+            echo '</form>';
+
             echo '</tr>';
         }
     } else {
@@ -68,7 +76,3 @@ function displayCartItems()
 
     $cartStmt->close();
 }
-
-// Example usage
-// $userId = 1; // Replace with the actual user ID
-// displayCartItems();
