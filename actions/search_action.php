@@ -22,7 +22,7 @@ if (isset($_POST['searchQuery'])) {
         while ($row = $result->fetch_assoc()) {
             echo '<p>' . $row['name'] . '</p>';
             // Redirect the user to the category page
-            header("Location: ../../FrontendEcomXpress/shop {$row['category_name']}.php");
+            header("Location: ../categories/shop {$row['category_name']}.php");
             exit();
         }
     } else {
