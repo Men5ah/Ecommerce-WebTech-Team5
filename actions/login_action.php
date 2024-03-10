@@ -4,7 +4,6 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-
 $LoginError = "";
 
 if (isset($_POST['email']) && isset($_POST['Password'])) {
@@ -27,10 +26,16 @@ if (isset($_POST['email']) && isset($_POST['Password'])) {
         // Verify hashed password
         if (password_verify($password, $current_user["Password"])) {
             $_SESSION['user_id'] = $current_user['person_id'];
-            echo $current_user['person_id'];
-            echo $_SESSION['user_id'];
-            header("Location: ../../FrontendEcomXpress/home.php");
-            exit();
+            $_SESSION['role_id'] = $current_user['role_id'];
+
+            if ($_SESSION['role_id']  == '1'){
+                header('Location: ../views/add_product.php');   
+            } else {
+                echo $current_user['person_id'];
+                echo $_SESSION['user_id'];
+                header("Location: ../views/home.php");
+                exit();
+            }
         } else {
             echo "Invalid Email or Password!";
         }

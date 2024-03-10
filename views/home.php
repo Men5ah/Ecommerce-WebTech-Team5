@@ -1,6 +1,6 @@
 <?php
-include "../FrontendEcomXpress/settings/core.php";
-// redirectID();
+include "../settings/core.php";
+include "../functions/select_cart.php";
 checkLogin();
 ?>
 
@@ -15,7 +15,7 @@ checkLogin();
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="../img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -25,11 +25,11 @@ checkLogin();
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -84,7 +84,7 @@ checkLogin();
             </a>
         </div>
         <div class="col-lg-4 col-6 text-left">
-            <form action="../FrontendEcomXpress/actions/search_action.php" method="POST">
+            <form action="../actions/search_action.php" method="POST">
                 <div class="input-group">
                     <input type="text" class="form-control" id="searchQuery" name="searchQuery" placeholder="Search for products">
                     <div class="input-group-append">
@@ -134,23 +134,25 @@ checkLogin();
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories<i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="../FrontendEcomXpress/shop fashion.php" class="dropdown-item">Fashion</a>
-                                    <a href="../FrontendEcomXpress/shop electronics.php" class="dropdown-item">Electronics</a>
-                                    <a href="../FrontendEcomXpress/shop skincare.php" class="dropdown-item">Skincare</a>
-                                    <a href="../FrontendEcomXpress/shop stationery.php" class="dropdown-item">Stationery</a>
-                                    <a href="../FrontendEcomXpress/shop hygiene.php" class="dropdown-item">Hygiene</a>
-                                    <a href="../FrontendEcomXpress/shop fruits and veggies.php" class="dropdown-item">Fruit&Veggies</a>
+                                    <a href="../categories/shop fashion.php" class="dropdown-item">Fashion</a>
+                                    <a href="../categories/shop electronics.php" class="dropdown-item">Electronics</a>
+                                    <a href="../categories/shop skincare.php" class="dropdown-item">Skincare</a>
+                                    <a href="../categories/shop stationery.php" class="dropdown-item">Stationery</a>
+                                    <a href="../categories/shop hygiene.php" class="dropdown-item">Hygiene</a>
+                                    <a href="../categories/shop fruits and veggies.php" class="dropdown-item">Fruit&Veggies</a>
                                 </div>
                             </div>
                             <a href="contact.php" class="nav-item nav-link">Contact</a>
                         </div>
+
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
 
-                            <a href="cart.php" class="btn px-0 ml-3">
+                            <a href="../views/cart.php" class="btn px-0 ml-3">
                                 <i class="fas fa-shopping-cart text-primary"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
                         </div>
+
                     </div>
                 </nav>
             </div>
@@ -171,32 +173,32 @@ checkLogin();
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item position-relative active" style="height: 430px;">
-                            <img class="position-absolute w-100 h-100" src="img/grapes-strawberries-pineapple-kiwi-apricot-banana-whole-pineapple.jpg" style="object-fit: cover;">
+                            <img class="position-absolute w-100 h-100" src="../img/grapes-strawberries-pineapple-kiwi-apricot-banana-whole-pineapple.jpg" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Fruits & Veggies</h1>
                                     <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Fresh fruits and veggies at your convenience</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="shop fruits and veggies.php">Shop Now</a>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="../categories/shop fruits and veggies.php">Shop Now</a>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item position-relative" style="height: 430px;">
-                            <img class="position-absolute w-100 h-100" src="img/tim-gouw-KigTvXqetXA-unsplash.jpg" style="object-fit: cover;">
+                            <img class="position-absolute w-100 h-100" src="../img/tim-gouw-KigTvXqetXA-unsplash.jpg" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Stationery</h1>
                                     <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Stay study with quality stationery.</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="shop stationery.php">Shop Now</a>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="../categories/shop stationery.php">Shop Now</a>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item position-relative" style="height: 430px;">
-                            <img class="position-absolute w-100 h-100" src="img/priscilla-du-preez-dlxLGIy-2VU-unsplash.jpg" style="object-fit: cover;">
+                            <img class="position-absolute w-100 h-100" src="../img/priscilla-du-preez-dlxLGIy-2VU-unsplash.jpg" style="object-fit: cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Fashion</h1>
                                     <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Add to Cart!!Add to Wadrobe!!</p>
-                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="shop fashion.php">Shop Now</a>
+                                    <a class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp" href="../categories/shop fashion.php">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -205,19 +207,19 @@ checkLogin();
             </div>
             <div class="col-lg-4">
                 <div class="product-offer mb-30" style="height: 200px;">
-                    <img class="img-fluid" src="img/content-pixie-0z4h9qneDMA-unsplash.jpg" alt="">
+                    <img class="img-fluid" src="../img/content-pixie-0z4h9qneDMA-unsplash.jpg" alt="">
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase">Save 20% on delivery</h6>
                         <h3 class="text-white mb-3">On SkinCare</h3>
-                        <a href="shop skincare.php" class="btn btn-primary">Shop Now</a>
+                        <a href="../categories/shop skincare.php" class="btn btn-primary">Shop Now</a>
                     </div>
                 </div>
                 <div class="product-offer mb-30" style="height: 200px;">
-                    <img class="img-fluid" src="img/phone-8293816_1280.jpg" alt="">
+                    <img class="img-fluid" src="../img/phone-8293816_1280.jpg" alt="">
                     <div class="offer-text">
                         <h6 class="text-white text-uppercase">Save 50% on delivery</h6>
                         <h3 class="text-white mb-3">Special Friday offer</h3>
-                        <a href="shop electronics.php" class="btn btn-primary">Shop Now</a>
+                        <a href="../categories/shop electronics.php" class="btn btn-primary">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -263,10 +265,10 @@ checkLogin();
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Categories</span></h2>
         <div class="row px-xl-5 pb-3">
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="shop fashion.php">
+                <a class="text-decoration-none" href="../categories/shop fashion.php">
                     <div class="cat-item d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 250px; height: 200px;">
-                            <img class="img-fluid" src="img/priscilla-du-preez-dlxLGIy-2VU-unsplash.jpg" alt="">
+                            <img class="img-fluid" src="../img/priscilla-du-preez-dlxLGIy-2VU-unsplash.jpg" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6>Fashion</h6>
@@ -276,20 +278,20 @@ checkLogin();
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="shop electronics.php">
+                <a class="text-decoration-none" href="../categories/shop electronics.php">
 
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="shop 2.php">
+                <a class="text-decoration-none" href="../categories/shop 2.php">
 
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="shop skincare.php">
+                <a class="text-decoration-none" href="../categories/shop skincare.php">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 250px; height: 200px;">
-                            <img class="img-fluid" src="img/content-pixie-0z4h9qneDMA-unsplash.jpg" alt="">
+                            <img class="img-fluid" src="../img/content-pixie-0z4h9qneDMA-unsplash.jpg" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6>SkinCare</h6>
@@ -299,10 +301,10 @@ checkLogin();
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="shop stationery.php">
+                <a class="text-decoration-none" href="../categories/shop stationery.php">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 250px; height: 200px;">
-                            <img class="img-fluid" src="img/tim-gouw-KigTvXqetXA-unsplash.jpg" alt="">
+                            <img class="img-fluid" src="../img/tim-gouw-KigTvXqetXA-unsplash.jpg" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6>Stationery</h6>
@@ -318,10 +320,10 @@ checkLogin();
 
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="shop hygiene.php">
+                <a class="text-decoration-none" href="../categories/shop hygiene.php">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 250px; height: 200px;">
-                            <img class="img-fluid" src="img/kelly-sikkema-xp-ND7NjWaA-unsplash.jpg" alt="">
+                            <img class="img-fluid" src="../img/kelly-sikkema-xp-ND7NjWaA-unsplash.jpg" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6>Hygiene</h6>
@@ -331,10 +333,10 @@ checkLogin();
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="shop fruits and veggies.php">
+                <a class="text-decoration-none" href="../categories/shop fruits and veggies.php">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 250px; height: 200px;">
-                            <img class="img-fluid" src="img/hunters-race-MYbhN8KaaEc-unsplash.jpg" alt="">
+                            <img class="img-fluid" src="../img/hunters-race-MYbhN8KaaEc-unsplash.jpg" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6>Fruits</h6>
@@ -350,10 +352,10 @@ checkLogin();
 
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a class="text-decoration-none" href="shop electronics.php">
+                <a class="text-decoration-none" href="../categories/shop electronics.php">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 250px; height: 200px;">
-                            <img class="img-fluid" src="img/vadim-sherbakov-tCICLJ5ktBE-unsplash.jpg" alt="">
+                            <img class="img-fluid" src="../img/vadim-sherbakov-tCICLJ5ktBE-unsplash.jpg" alt="">
                         </div>
                         <div class="flex-fill pl-3">
                             <h6>Electronics</h6>
@@ -374,7 +376,7 @@ checkLogin();
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/books.jpeg" alt="">
+                        <img class="img-fluid w-100" src="../img/books.jpeg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -402,7 +404,7 @@ checkLogin();
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product-2.jpg" alt="">
+                        <img class="img-fluid w-100" src="../img/product-2.jpg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -430,7 +432,7 @@ checkLogin();
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/dettol.jpeg" alt="">
+                        <img class="img-fluid w-100" src="../img/dettol.jpeg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -458,7 +460,7 @@ checkLogin();
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/dress.jpeg" alt="">
+                        <img class="img-fluid w-100" src="../img/dress.jpeg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -486,7 +488,7 @@ checkLogin();
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product-5.jpg" alt="">
+                        <img class="img-fluid w-100" src="../img/product-5.jpg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -514,7 +516,7 @@ checkLogin();
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product-6.jpg" alt="">
+                        <img class="img-fluid w-100" src="../img/product-6.jpg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -542,7 +544,7 @@ checkLogin();
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product-7.jpg" alt="">
+                        <img class="img-fluid w-100" src="../img/product-7.jpg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -570,7 +572,7 @@ checkLogin();
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product-8.jpg" alt="">
+                        <img class="img-fluid w-100" src="../img/product-8.jpg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -607,7 +609,7 @@ checkLogin();
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product-1.jpg" alt="">
+                        <img class="img-fluid w-100" src="../img/product-1.jpg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -635,7 +637,7 @@ checkLogin();
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product-2.jpg" alt="">
+                        <img class="img-fluid w-100" src="../img/product-2.jpg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -663,7 +665,7 @@ checkLogin();
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product-3.jpg" alt="">
+                        <img class="img-fluid w-100" src="../img/product-3.jpg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -691,7 +693,7 @@ checkLogin();
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/product-4.jpg" alt="">
+                        <img class="img-fluid w-100" src="../img/product-4.jpg" alt="">
                         <div class="product-action">
                             <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                             <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -791,4 +793,3 @@ checkLogin();
 </body>
 
 </html>
-
