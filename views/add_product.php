@@ -1,7 +1,7 @@
 <?php
 include "../settings/core.php";
 include "../functions/select_category.php";
-redirectID();
+// redirectID();
 checkLogin();
 ?>
 
