@@ -83,9 +83,9 @@ session_start();
             </a>
         </div>
         <div class="col-lg-4 col-6 text-left">
-            <form action="">
+            <form action="../actions/search_action.php" method="POST">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for products">
+                    <input type="text" class="form-control" id="searchQuery" name="searchQuery" placeholder="Search for products">
                     <div class="input-group-append">
                         <span class="input-group-text bg-transparent text-primary">
                             <i class="fa fa-search"></i>
@@ -107,7 +107,7 @@ session_start();
     <div class="container-fluid bg-dark mb-30">
         <div class="row px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                <a href="home.html" class="text-decoration-none">
+                <a href="home.php" class="text-decoration-none">
                     <span class="h1 text-uppercase text-primary bg-dark px-2">Ecom</span>
                     <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Xpress</span>
                 </a>
@@ -129,19 +129,19 @@ session_start();
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="home.html" class="nav-item nav-link">Home</a>
+                            <a href="home.php" class="nav-item nav-link">Home</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories<i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="shop fashion.html" class="dropdown-item">Fashion</a>
-                                    <a href="shop electronics.html" class="dropdown-item">Electronics</a>
-                                    <a href="shop skincare.html" class="dropdown-item">Skincare</a>
-                                    <a href="shop stationery.html" class="dropdown-item">Stationery</a>
-                                    <a href="shop hygiene.html" class="dropdown-item">Hygiene</a>
-                                    <a href="shop fruits and veggies.html" class="dropdown-item">Fruit&Veggies</a>
+                                    <a href="../categories/shop fashion.php" class="dropdown-item">Fashion</a>
+                                    <a href="../categories/shop electronics.php" class="dropdown-item">Electronics</a>
+                                    <a href="../categories/shop skincare.php" class="dropdown-item">Skincare</a>
+                                    <a href="../categories/shop stationery.php" class="dropdown-item">Stationery</a>
+                                    <a href="../categories/shop hygiene.php" class="dropdown-item">Hygiene</a>
+                                    <a href="../categories/shop fruits and veggies.php" class="dropdown-item">Fruit&Veggies</a>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="contact.php" class="nav-item nav-link">Contact</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
 

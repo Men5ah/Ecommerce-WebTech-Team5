@@ -11,7 +11,7 @@
 <body>
     <div class="login-container">
         <h2>Sign in</h2>
-        <form action="../actions/login_action.php" method="post" name="loginForm" id="loginForm">
+        <form action="../actions/login_action.php" method="POST" name="loginForm" id="loginForm">
             <label for="email">Email</label>
             <input type="email" name="email" id="email" placeholder="Enter your email" required>
 
