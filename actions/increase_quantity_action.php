@@ -2,11 +2,11 @@
 include "../settings/connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    if (isset($_POST['cart_id'])) {
-        $cartId = $_POST['cart_id'];
+    if (isset($_POST['product_id'])) {
+        $cartId = $_POST['product_id'];
 
         // Perform the reduction in the database
-        $reduceQuery = "UPDATE Carts SET quantity = quantity + 1 WHERE cart_id = ?";
+        $reduceQuery = "UPDATE Carts SET quantity = quantity + 1 WHERE product_id = ?";
         $reduceStmt = $conn->prepare($reduceQuery);
         $reduceStmt->bind_param("i", $cartId);
         $reduceStmt->execute();

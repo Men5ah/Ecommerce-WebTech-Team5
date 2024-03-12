@@ -1,3 +1,9 @@
+<?php
+include "../settings/core.php";
+include "../functions/select_cart.php";
+checkLogin();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +19,7 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -29,71 +35,71 @@
 <body>
     <!-- Topbar Start -->
     <div class="container-fluid">
-        
-            </div>
-            <div class="col-lg-6 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">My Account</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">Sign in</button>
-                            <button class="dropdown-item" type="button">Sign up</button>
-                            <button class="dropdown-item" type="button">Help</button>
-                        </div>
-                    </div>
-                    <div class="btn-group mx-2">
-                        <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">CEDIS</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">EUR</button>
-                            <button class="dropdown-item" type="button">GBP</button>
-                            <button class="dropdown-item" type="button">CAD</button>
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">EN</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">FR</button>
-                            <button class="dropdown-item" type="button">AF</button>
-                            <button class="dropdown-item" type="button">RU</button>
-                        </div>
-                    </div>
+
+    </div>
+    <div class="col-lg-6 text-center text-lg-right">
+        <div class="d-inline-flex align-items-center">
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">My Account</button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <button class="dropdown-item" type="button">Sign in</button>
+                    <button class="dropdown-item" type="button">Sign up</button>
+                    <button class="dropdown-item" type="button">Help</button>
                 </div>
-                <div class="d-inline-flex align-items-center d-block d-lg-none">
-                    <a href="" class="btn px-0 ml-2">
-                        <i class="fas fa-heart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
-                    </a>
-                    <a href="" class="btn px-0 ml-2">
-                        <i class="fas fa-shopping-cart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
-                    </a>
+            </div>
+            <div class="btn-group mx-2">
+                <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">CEDIS</button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <button class="dropdown-item" type="button">EUR</button>
+                    <button class="dropdown-item" type="button">GBP</button>
+                    <button class="dropdown-item" type="button">CAD</button>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">EN</button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <button class="dropdown-item" type="button">FR</button>
+                    <button class="dropdown-item" type="button">AF</button>
+                    <button class="dropdown-item" type="button">RU</button>
                 </div>
             </div>
         </div>
-        <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
-            <div class="col-lg-4">
-                <a href="" class="text-decoration-none">
-                    <span class="">Welcome</span>
-                    <span class="">Shopper</span>
-                </a>
-            </div>
-            <div class="col-lg-4 col-6 text-left">
-                <form action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for products">
-                        <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
-                                <i class="fa fa-search"></i>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-lg-4 col-6 text-right">
-                <p class="m-0">Customer Service</p>
-                <h5 class="m-0">002233456789</h5>
-            </div>
+        <div class="d-inline-flex align-items-center d-block d-lg-none">
+            <a href="" class="btn px-0 ml-2">
+                <i class="fas fa-heart text-dark"></i>
+                <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+            </a>
+            <a href="" class="btn px-0 ml-2">
+                <i class="fas fa-shopping-cart text-dark"></i>
+                <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+            </a>
         </div>
+    </div>
+    </div>
+    <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
+        <div class="col-lg-4">
+            <a href="" class="text-decoration-none">
+                <span class="">Welcome</span>
+                <span class="">Shopper</span>
+            </a>
+        </div>
+        <div class="col-lg-4 col-6 text-left">
+            <form action="../actions/search_action.php" method="POST">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchQuery" name="searchQuery" placeholder="Search for products">
+                    <div class="input-group-append">
+                        <span class="input-group-text bg-transparent text-primary">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-4 col-6 text-right">
+            <p class="m-0">Customer Service</p>
+            <h5 class="m-0">002233456789</h5>
+        </div>
+    </div>
     </div>
     <!-- Topbar End -->
 
@@ -102,15 +108,15 @@
     <div class="container-fluid bg-dark mb-30">
         <div class="row px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                    <a href="home.html" class="text-decoration-none">
-                        <span class="h1 text-uppercase text-primary bg-dark px-2">Ecom</span>
-                        <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Xpress</span>
-                    </a>
-                    <i class="fa fa-angle-down text-dark"></i>
+                <a href="home.php" class="text-decoration-none">
+                    <span class="h1 text-uppercase text-primary bg-dark px-2">Ecom</span>
+                    <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Xpress</span>
+                </a>
+                <i class="fa fa-angle-down text-dark"></i>
                 </a>
                 <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
-                   
-                        
+
+
                 </nav>
             </div>
             <div class="col-lg-9">
@@ -124,23 +130,23 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="home.html" class="nav-item nav-link">Home</a>
+                            <a href="home.php" class="nav-item nav-link">Home</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories<i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="shop fashion.html" class="dropdown-item">Fashion</a>
-                                    <a href="shop electronics.html" class="dropdown-item">Electronics</a>
-                                    <a href="shop skincare.html" class="dropdown-item">Skincare</a>
-                                    <a href="shop stationery.html" class="dropdown-item">Stationery</a>
-                                    <a href="shop hygiene.html" class="dropdown-item">Hygiene</a>
-                                    <a href="shop fruits and veggies.html" class="dropdown-item">Fruit&Veggies</a>
+                                    <a href="../categories/shop fashion.php" class="dropdown-item">Fashion</a>
+                                    <a href="../categories/shop electronics.php" class="dropdown-item">Electronics</a>
+                                    <a href="../categories/shop skincare.php" class="dropdown-item">Skincare</a>
+                                    <a href="../categories/shop stationery.php" class="dropdown-item">Stationery</a>
+                                    <a href="../categories/shop hygiene.php" class="dropdown-item">Hygiene</a>
+                                    <a href="../categories/shop fruits and veggies.php" class="dropdown-item">Fruit&Veggies</a>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="contact.php" class="nav-item nav-link">Contact</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
-                           
-                            <a href="cart.html" class="btn px-0 ml-3">
+
+                            <a href="cart.php" class="btn px-0 ml-3">
                                 <i class="fas fa-shopping-cart text-primary"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
@@ -161,24 +167,19 @@
                     <div id="success"></div>
                     <form name="sentMessage" id="contactForm" novalidate="novalidate">
                         <div class="control-group">
-                            <input type="text" class="form-control" id="name" placeholder="Your Name"
-                                required="required" data-validation-required-message="Please enter your name" />
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="email" class="form-control" id="email" placeholder="Your Email"
-                                required="required" data-validation-required-message="Please enter your email" />
+                            <input type="email" class="form-control" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="text" class="form-control" id="subject" placeholder="Subject"
-                                required="required" data-validation-required-message="Please enter a subject" />
+                            <input type="text" class="form-control" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <textarea class="form-control" rows="8" id="message" placeholder="Message"
-                                required="required"
-                                data-validation-required-message="Please enter your message"></textarea>
+                            <textarea class="form-control" rows="8" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                         <div>
@@ -190,9 +191,7 @@
             </div>
             <div class="col-lg-5 mb-5">
                 <div class="bg-light p-30 mb-30">
-                    <iframe style="width: 100%; height: 250px;"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                    frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    <iframe style="width: 100%; height: 250px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
                 <div class="bg-light p-30 mb-3">
                     <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
@@ -205,7 +204,7 @@
     <!-- Contact End -->
 
 
-  
+
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
         <div class="row px-xl-5 pt-5">
@@ -216,40 +215,40 @@
                 <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>ecomxpress@gmail.com</p>
                 <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>0200342465</p>
             </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">My Account</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Categories</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Details</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Cart</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                            <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+            <div class="col-md-4 mb-5">
+                <h5 class="text-secondary text-uppercase mb-4">My Account</h5>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Categories</a>
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Details</a>
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Cart</a>
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
+                    <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <h5 class="text-secondary text-uppercase mb-4">Newsletter</h5>
+                <p>For Promotion,Sales and Discounts </p>
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Your Email Address">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary">Sign Up</button>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">Newsletter</h5>
-                        <p>For Promotion,Sales and Discounts </p>
-                        <form action="">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Your Email Address">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary">Sign Up</button>
-                                </div>
-                            </div>
-                        </form>
-                        <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
-                        <div class="d-flex">
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
+                </form>
+                <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
+                <div class="d-flex">
+                    <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
-       
+    </div>
+    </div>
+
     <!-- Footer End -->
 
 
