@@ -4,25 +4,25 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-function redirectID()
-{
-    if (isset($_SESSION['role_id']) && $_SESSION['role_id'] === 1) {
-        $currentPage = basename($_SERVER['PHP_SELF']);
-        if ($currentPage !== "add_product.php") {
-            header("Location: ../views/add_product.php");
-            die();
-        }
-    } elseif (isset($_SESSION['role_id']) && $_SESSION['role_id'] === 2) {
-        $currentPage = basename($_SERVER['PHP_SELF']);
-        if ($currentPage !== "home.php") {
-            header("Location: ../views/home.php");
-            die();
-        }
-    } else {
-        header("Location: ../views/login.php?msg=You aren't being logged in");
-        die();
-    }
-}
+// function redirectID()
+// {
+//     if (isset($_SESSION['role_id']) && $_SESSION['role_id'] === 1) {
+//         $currentPage = basename($_SERVER['PHP_SELF']);
+//         if ($currentPage !== "add_product.php") {
+//             header("Location: ../views/add_product.php");
+//             die();
+//         }
+//     } elseif (isset($_SESSION['role_id']) && $_SESSION['role_id'] === 2) {
+//         $currentPage = basename($_SERVER['PHP_SELF']);
+//         if ($currentPage !== "home.php") {
+//             header("Location: ../views/home.php");
+//             die();
+//         }
+//     } else {
+//         header("Location: ../views/login.php?msg=You aren't being logged in");
+//         die();
+//     }
+// }
 
 if (!function_exists('checkLogin')) {
     function checkLogin()
