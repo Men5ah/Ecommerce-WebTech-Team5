@@ -104,7 +104,7 @@ CREATE TABLE Orders (
 
 
 CREATE TABLE Carts (
-    cart_id INT PRIMARY KEY DEFAULT 1,
+    cart_id INT DEFAULT 1,
     user_id INT,
     product_id INT,
     quantity INT,

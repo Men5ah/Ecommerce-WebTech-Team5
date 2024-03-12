@@ -34,7 +34,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit;
             default:
                 // Handle other categories or provide a default redirection
-                header("Location: ../views/home.php");
+                if ($_SESSION['role_id'] == 1)
+                {
+                    header("Location: ../views/sellerhome.php");
+                } 
+                else
+                {
+                    header("Location: ../views/userhome.php");
+                }
                 exit;
         }
     } else {

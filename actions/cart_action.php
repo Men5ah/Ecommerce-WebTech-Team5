@@ -28,38 +28,7 @@ if (isset($_POST['productId'])) {
             $updateQuantityStmt = $conn->prepare($updateQuantityQuery);
             $updateQuantityStmt->bind_param("ii", $userId, $productId);
             $updateQuantityStmt->execute();
-            // Redirect the user to the cart page or any other page as needed
-            // header("Location: ../views/cart.php");
 
-                // Retrieve all items in the cart and calculate the total amount
-            $getCartItemsQuery = "
-            SELECT Product.product_name, Product.price, Carts.quantity
-            FROM Carts
-            INNER JOIN Product ON Carts.product_id = Product.product_id
-            WHERE Carts.user_id = ?";
-
-            $getCartItemsStmt = $conn->prepare($getCartItemsQuery);
-            $getCartItemsStmt->bind_param("i", $userId);
-            $getCartItemsStmt->execute();
-            $cartItemsResult = $getCartItemsStmt->get_result();
-
-            $items = [];
-            $totalAmount = 0;
-
-            while ($row = $cartItemsResult->fetch_assoc()) {
-                $itemName = $row['product_name'];
-                $itemPrice = $row['price'];
-                $itemQuantity = $row['quantity'];
-            
-                $items[] = "$itemName (Quantity: $itemQuantity)";
-                $totalAmount += $itemPrice * $itemQuantity;
-            }
-
-            // Store the total amount in a session variable
-            $_SESSION['total_amount'] = $totalAmount;
-
-            // Redirect the user to the checkout page
-            // header("Location: ../views/checkout.php");
             header("Location: ../views/cart.php");
             exit();
         } else {
@@ -67,14 +36,18 @@ if (isset($_POST['productId'])) {
             $insertIntoCartQuery = "INSERT INTO Carts (user_id, product_id, quantity) VALUES (?, ?, 1)";
             $insertIntoCartStmt = $conn->prepare($insertIntoCartQuery);
             $insertIntoCartStmt->bind_param("ii", $userId, $productId);
+            // header("Location: ../views/cart.php");
 
             // Check if the insertion was successful
             if ($insertIntoCartStmt->execute()) {
                 // Redirect the user to the cart page or any other page as needed
                 header("Location: ../views/cart.php");
                 exit();
-            } else {
-                echo "Error inserting into Carts: " . $conn->error;
+            } 
+            else
+            {
+                echo "Error inserting into Carts: ";
+                //  . $conn->error;
             }
         }
     } else {

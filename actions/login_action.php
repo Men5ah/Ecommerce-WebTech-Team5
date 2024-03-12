@@ -29,11 +29,12 @@ if (isset($_POST['email']) && isset($_POST['Password'])) {
             $_SESSION['role_id'] = $current_user['role_id'];
 
             if ($_SESSION['role_id']  == '1'){
-                header('Location: ../views/add_product.php');   
+                // header('Location: ../views/add_product.php');
+                header('Location: ../views/sellerhome.php');      
             } else {
                 echo $current_user['person_id'];
                 echo $_SESSION['user_id'];
-                header("Location: ../views/home.php");
+                header("Location: ../views/userhome.php");
                 exit();
             }
         } else {

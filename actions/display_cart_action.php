@@ -36,6 +36,8 @@ function displayCartItems()
             $quantity = $row['quantity'];
             $subtotal = $price * $quantity;
 
+            // <button type="submit" class="btn btn-sm btn-primary btn-minus" name="cart_id" value="' . $cartId . '">
+            // <button type="submit" class="btn btn-sm btn-primary btn-plus" name="cart_id" value="' . $cartId . '">
             echo '<tr>';
             echo '<td class="align-middle"><img src="img/product-' . $productId . '.jpg" alt="" style="width: 50px;"> ' . $productName . '</td>';
             echo '<td class="align-middle">$' . $price . '</td>';
@@ -43,7 +45,7 @@ function displayCartItems()
                     <div class="input-group quantity mx-auto" style="width: 100px;">
                         <form action="../actions/reduce_quantity_action.php" method="post">
                             <div class="input-group-btn">
-                                <button type="submit" class="btn btn-sm btn-primary btn-minus" name="cart_id" value="' . $cartId . '">
+                                <button type="submit" class="btn btn-sm btn-primary btn-minus" name="product_id" value="' . $productId . '">
                                     <i class="fa fa-minus"></i>
                                 </button>
                             </div>
@@ -51,7 +53,7 @@ function displayCartItems()
                         <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" value="' . $quantity . '">
                         <form action="../actions/increase_quantity_action.php" method="post">
                             <div class="input-group-btn">
-                                <button type="submit" class="btn btn-sm btn-primary btn-plus" name="cart_id" value="' . $cartId . '">
+                                <button type="submit" class="btn btn-sm btn-primary btn-minus" name="product_id" value="' . $productId . '">
                                     <i class="fa fa-plus"></i>
                                 </button>
                             </div>
@@ -60,7 +62,8 @@ function displayCartItems()
                 </td>';
             echo '<td class="align-middle">$' . $subtotal . '</td>';
             echo '<form action="../actions/delete_item_action.php" method="POST">';
-            echo '<input type="hidden" name="cart_id" value="' . $cartId . '">';
+            // echo '<input type="hidden" name="cart_id" value="' . $cartId . '">';
+            echo '<input type="hidden" name="product_id" value="' . $productId . '">';
             echo '<td class="align-middle">
                     <button type="submit" class="btn btn-sm btn-danger">
                         <i class="fa fa-times"></i>
