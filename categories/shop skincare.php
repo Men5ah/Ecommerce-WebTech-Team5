@@ -102,7 +102,7 @@
     <div class="container-fluid bg-dark mb-30">
         <div class="row px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                    <a href="../views/home.php" class="text-decoration-none">
+                    <a href="../actions/seller_buyer_home_action.php" class="text-decoration-none">
                         <span class="h1 text-uppercase text-primary bg-dark px-2">Ecom</span>
                         <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Xpress</span>
                     </a>
@@ -124,7 +124,7 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="../views/home.php" class="nav-item nav-link">Home</a>
+                            <a href="../actions/seller_buyer_home_action.php" class="nav-item nav-link">Home</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories<i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
@@ -143,7 +143,7 @@
                                 <i class="fas fa-heart text-primary"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
-                            <a href="" class="btn px-0 ml-3">
+                            <a href="../views/cart.php" class="btn px-0 ml-3">
                                 <i class="fas fa-shopping-cart text-primary"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>

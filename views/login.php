@@ -20,7 +20,6 @@
 
             <button type="submit" name="signinBtn" id="signinBtn">Login</button>
         </form>
-
         <div class="register-link">
             <p>Don't have an account? <a href="../views/register.php">Register here</a></p>
         </div>

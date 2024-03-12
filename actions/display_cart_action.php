@@ -14,7 +14,6 @@ if (isset($_SESSION['user_id'])) {
 
 function displayCartItems()
 {
-
     include "../settings/connection.php";
     $userId = $_SESSION['user_id'];
 
