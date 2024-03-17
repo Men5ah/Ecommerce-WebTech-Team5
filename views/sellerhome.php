@@ -1,6 +1,8 @@
 <?php
 include "../settings/core.php";
-include "../functions/select_cart.php";
+include "../actions/cart_action.php";
+
+// include "../functions/select_cart.php";
 checkLogin();
 ?>
 
@@ -88,9 +90,9 @@ checkLogin();
                 <div class="input-group">
                     <input type="text" class="form-control" id="searchQuery" name="searchQuery" placeholder="Search for products">
                     <div class="input-group-append">
-                        <span class="input-group-text bg-transparent text-primary">
+                        <button class="input-group-text bg-transparent text-primary">
                             <i class="fa fa-search"></i>
-                        </span>
+                        </button>
                     </div>
                 </div>
             </form>
@@ -108,7 +110,7 @@ checkLogin();
     <div class="container-fluid bg-dark mb-30">
         <div class="row px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                <a href="home.php" class="text-decoration-none">
+                <a href="../actions/seller_buyer_home_action.php" class="text-decoration-none">
                     <span class="h1 text-uppercase text-primary bg-dark px-2">Ecom</span>
                     <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Xpress</span>
                 </a>
@@ -130,7 +132,7 @@ checkLogin();
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="home.php" class="nav-item nav-link">Home</a>
+                            <a href="../actions/seller_buyer_home_action.php" class="nav-item nav-link">Home</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories<i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
@@ -148,16 +150,15 @@ checkLogin();
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="../views/add_product.php" class="btn px-0 ml-3">
                                 <button>Add Items</button>
-                                <!-- <i class="fas fa-shopping-cart text-primary"></i> -->
-                                <!-- <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span> -->
                             </a>
 
                             <a href="../views/cart.php" class="btn px-0 ml-3">
                                 <i class="fas fa-shopping-cart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">
+                                    <?php echo getCartCount(); ?>
+                                </span>
                             </a>
                         </div>
-
                     </div>
                 </nav>
             </div>
