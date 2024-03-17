@@ -78,3 +78,89 @@ function displayCartItems()
 
     $cartStmt->close();
 }
+
+
+function displaySubTotal()
+{
+    include "../settings/connection.php";
+    $userId = $_SESSION['user_id'];
+
+    $cartQuery = "SELECT c.cart_id, p.product_id, p.name AS product_name, p.price, c.quantity
+                  FROM Carts c
+                  INNER JOIN Product p ON c.product_id = p.product_id
+                  WHERE c.user_id = ?";
+    $cartStmt = $conn->prepare($cartQuery);
+    $cartStmt->bind_param("i", $userId);
+    $cartStmt->execute();
+    $cartResult = $cartStmt->get_result();
+
+    if ($cartResult->num_rows > 0) {
+        while ($row = $cartResult->fetch_assoc()) {
+            $cartId = $row['cart_id'];
+            $productId = $row['product_id'];
+            $productName = $row['product_name'];
+            $price = $row['price'];
+            $quantity = $row['quantity'];
+            $subtotal = $price * $quantity;
+
+            echo '<td class="align-middle">$' . $subtotal . '</td>';
+            // $subtotal;
+        }
+    }
+}
+
+function displayShipping()
+{
+    include "../settings/connection.php";
+    $userId = $_SESSION['user_id'];
+
+    $cartQuery = "SELECT c.cart_id, p.product_id, p.name AS product_name, p.price, c.quantity
+                  FROM Carts c
+                  INNER JOIN Product p ON c.product_id = p.product_id
+                  WHERE c.user_id = ?";
+    $cartStmt = $conn->prepare($cartQuery);
+    $cartStmt->bind_param("i", $userId);
+    $cartStmt->execute();
+    $cartResult = $cartStmt->get_result();
+
+    if ($cartResult->num_rows > 0) {
+        while ($row = $cartResult->fetch_assoc()) {
+            $cartId = $row['cart_id'];
+            $productId = $row['product_id'];
+            $productName = $row['product_name'];
+            $price = $row['price'];
+            $quantity = $row['quantity'];
+            $subtotal = $price * $quantity;
+
+            echo '<td class="align-middle">$' . round(($subtotal / 6.67), 2) . '</td>';
+        }
+    }
+}
+
+function displayTotal()
+{
+    include "../settings/connection.php";
+    $userId = $_SESSION['user_id'];
+
+    $cartQuery = "SELECT c.cart_id, p.product_id, p.name AS product_name, p.price, c.quantity
+                  FROM Carts c
+                  INNER JOIN Product p ON c.product_id = p.product_id
+                  WHERE c.user_id = ?";
+    $cartStmt = $conn->prepare($cartQuery);
+    $cartStmt->bind_param("i", $userId);
+    $cartStmt->execute();
+    $cartResult = $cartStmt->get_result();
+
+    if ($cartResult->num_rows > 0) {
+        while ($row = $cartResult->fetch_assoc()) {
+            $cartId = $row['cart_id'];
+            $productId = $row['product_id'];
+            $productName = $row['product_name'];
+            $price = $row['price'];
+            $quantity = $row['quantity'];
+            $subtotal = $price * $quantity;
+
+            echo '<td class="align-middle">$' . round($subtotal + ($subtotal / 6.67), 2) . '</td>';
+        }
+    }
+}

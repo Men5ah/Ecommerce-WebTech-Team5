@@ -23,7 +23,7 @@ function displayElectronicProducts()
                 echo '<div class="product-img position-relative overflow-hidden">';
                 echo '<img class="img-fluid w-100" src="' . $imagePath . '" alt="' . $productName . '">';
                 echo '<div class="product-action">';
-                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm.php?productId=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
+                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm.php?product_id=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>';
@@ -79,7 +79,7 @@ function displayFashionProducts()
                 echo '<div class="product-img position-relative overflow-hidden">';
                 echo '<img class="img-fluid w-100" src="' . $imagePath . '" alt="' . $productName . '">';
                 echo '<div class="product-action">';
-                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm.php?productId=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
+                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm.php?product_id=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>';
@@ -135,7 +135,7 @@ function displayStationeryProducts()
                 echo '<div class="product-img position-relative overflow-hidden">';
                 echo '<img class="img-fluid w-100" src="' . $imagePath . '" alt="' . $productName . '">';
                 echo '<div class="product-action">';
-                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm.php?productId=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
+                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm.php?product_id=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>';
@@ -191,7 +191,7 @@ function displaySkincareProducts()
                 echo '<div class="product-img position-relative overflow-hidden">';
                 echo '<img class="img-fluid w-100" src="' . $imagePath . '" alt="' . $productName . '">';
                 echo '<div class="product-action">';
-                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm.php?productId=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
+                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm.php?product_id=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>';
@@ -247,7 +247,7 @@ function displayFoodProducts()
                 echo '<div class="product-img position-relative overflow-hidden">';
                 echo '<img class="img-fluid w-100" src="' . $imagePath . '" alt="' . $productName . '">';
                 echo '<div class="product-action">';
-                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm.php?productId=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
+                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm.php?product_id=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>';
@@ -303,7 +303,7 @@ function displayHygieneProducts()
                 echo '<div class="product-img position-relative overflow-hidden">';
                 echo '<img class="img-fluid w-100" src="' . $imagePath . '" alt="' . $productName . '">';
                 echo '<div class="product-action">';
-                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm.php?productId=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
+                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm.php?product_id=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>';

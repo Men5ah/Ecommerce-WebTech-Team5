@@ -2,9 +2,10 @@
 include "../settings/connection.php";
 include "../settings/core.php";
 
-if (isset($_POST['productId'])) {
+if (isset($_POST['product_id'])) {
     // $productId = $_POST['addToCart'];
-    $productId = $_POST['productId'];
+    $productId = $_POST['product_id'];
+    // echo $productId;
     $userId = $_SESSION['user_id'];
 
     // Check if the product exists in the Product table
@@ -43,9 +44,7 @@ if (isset($_POST['productId'])) {
                 // Redirect the user to the cart page or any other page as needed
                 header("Location: ../views/cart.php");
                 exit();
-            } 
-            else
-            {
+            } else {
                 echo "Error inserting into Carts: ";
                 //  . $conn->error;
             }
@@ -54,7 +53,51 @@ if (isset($_POST['productId'])) {
         echo "Product with ID $productId does not exist.";
     }
 } else {
-    echo 'Invalid request.';
+    // echo 'Invalid request.';
 }
 
 $conn->close();
+
+function getCartCount()
+{
+    include "../settings/connection.php";
+
+    if (isset($_SESSION['user_id'])) {
+        $userId = $_SESSION['user_id'];
+
+        $cartCountQuery = "SELECT SUM(quantity) as total FROM Carts WHERE user_id = ?";
+        $cartCountStmt = $conn->prepare($cartCountQuery);
+        $cartCountStmt->bind_param("i", $userId);
+        $cartCountStmt->execute();
+        $result = $cartCountStmt->get_result();
+        $cartCount = $result->fetch_assoc()['total'] ?? 0;
+
+        $cartCountStmt->close();
+
+        return $cartCount;
+    }
+
+    return 0;
+}
+
+function getSubTotal()
+{
+    include "../settings/connection.php";
+
+    if (isset($_SESSION['user_id'])) {
+        $userId = $_SESSION['user_id'];
+
+        $cartCountQuery = "SELECT SUM(total) as total FROM Carts WHERE user_id = ?";
+        $cartCountStmt = $conn->prepare($cartCountQuery);
+        $cartCountStmt->bind_param("i", $userId);
+        $cartCountStmt->execute();
+        $result = $cartCountStmt->get_result();
+        $cartCount = $result->fetch_assoc()['total'] ?? 0;
+
+        $cartCountStmt->close();
+
+        return $cartCount;
+    }
+
+    return 0;
+}
