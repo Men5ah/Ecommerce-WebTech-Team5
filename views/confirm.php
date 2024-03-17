@@ -1,8 +1,8 @@
 <?php
 include "../actions/display_search_action.php";
 
-if (isset($_GET['productId'])) {
-    $productId = $_GET['productId'];
+if (isset($_GET['product_id'])) {
+    $productId = $_GET['product_id'];
 } else {
     echo "Product ID not provided in the URL.";
 }
@@ -20,12 +20,12 @@ if (isset($_GET['productId'])) {
 <body>
 
     <!-- Confirmation form -->
-    <form id="addToCart" action="../actions/cart_action.php" method="POST">
+    <form id="product_id" action="../actions/cart_action.php" method="POST">
         <!-- Include the hidden input field for productId -->
-        <input type="hidden" name="productId" value="<?php echo $productId; ?>">
+        <input name="product_id" value="<?php echo $productId; ?>">
 
         <!-- Button to trigger confirmation -->
-        <button type="submit" class="btn btn-outline-dark btn-square" name="addToCart">Add to Cart</button>
+        <button type="submit" class="btn btn-outline-dark btn-square">Add to Cart</button>
     </form>
 </body>
 
