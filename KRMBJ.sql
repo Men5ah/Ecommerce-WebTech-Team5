@@ -9,9 +9,9 @@ CREATE TABLE Person (
     Email VARCHAR(105) UNIQUE NOT NULL,
     Password VARCHAR(155) NOT NULL,
     Phone_Number VARCHAR(11) NOT NULL,
-    City ENUM ('Accra', 'Kumasi', 'Tamale', 'Takoradi', 'Tema', 'Cape Coast') NOT NULL,
+    City VARCHAR(255) NOT NULL,
     Street VARCHAR(255) NOT NULL,
-    Role ENUM('User', 'Seller') NOT NULL,
+    Role VARCHAR(255) NOT NULL,
     role_id INT DEFAULT 2
 );
 
