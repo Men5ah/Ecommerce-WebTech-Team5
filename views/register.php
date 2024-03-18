@@ -34,7 +34,7 @@
 
             <!-- A new input field added for the role of the user (USer or Customer) -->
             <label for="role">Role</label>
-            <input type="text" name="role" id="role" placeholder="Enter your role" required>
+            <input type="text" name="role" id="role" value=2 placeholder="Enter your role" required>
 
             <button type="submit" name="registerBtn" id="registerBtn">Register</button>
 

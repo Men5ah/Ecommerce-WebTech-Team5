@@ -45,7 +45,7 @@ $role = $_POST['role'];
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
 // Use prepared statement for insertion
-$sql = "INSERT INTO Person (fname, lname, Email, Password, Phone_Number, City, role) VALUES ('$firstName', '$lastName', '$email', '$hashedPassword', '$phoneNumber', '$location', '$role')";
+$sql = "INSERT INTO Person (fname, lname, Email, Password, Phone_Number, City, role_id) VALUES ('$firstName', '$lastName', '$email', '$hashedPassword', '$phoneNumber', '$location', '$role')";
 
 if ($conn->query($sql) === TRUE) {
     // echo "User registered successfully";
