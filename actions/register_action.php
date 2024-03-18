@@ -39,7 +39,7 @@ $email = $_POST['email'];
 $password = $_POST['Password']; // Assuming the password is plain text here
 $phoneNumber = $_POST['phone'];
 $location = $_POST['location'];
-$role = $_POST['role'];
+$role = $_POST['role_id'];
 
 // Hash the password
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
