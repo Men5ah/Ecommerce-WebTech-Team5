@@ -14,7 +14,7 @@ $role = $_POST['role'];
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
 // Use prepared statement for insertion
-$sql = "INSERT INTO person (fname, lname, Email, Password, Phone_Number, City, role) VALUES (?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO Person (fname, lname, Email, Password, Phone_Number, City, role) VALUES (?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("sssssss", $firstName, $lastName, $email, $hashedPassword, $phoneNumber, $location, $role);
 
