@@ -10,8 +10,6 @@ CREATE TABLE Person (
     Password VARCHAR(155) NOT NULL,
     Phone_Number VARCHAR(11) NOT NULL,
     City VARCHAR(255) NOT NULL,
-    Street VARCHAR(255),
-    Role VARCHAR(255) NOT NULL,
     role_id INT DEFAULT 2
 );
 
