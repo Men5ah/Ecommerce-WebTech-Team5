@@ -1,5 +1,5 @@
 <?php
-include "../settings/connection.php";
+include_once "../settings/connection.php";
 
 // Get user input
 $firstName = $_POST['firstName'];

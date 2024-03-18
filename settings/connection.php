@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password =  "cs341webtech";
+$username = "demo";
+$password =  "";
 $database = "KRMBJ";
 $port = 3306;
 

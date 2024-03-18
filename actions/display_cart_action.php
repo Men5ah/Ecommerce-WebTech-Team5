@@ -1,7 +1,7 @@
 <?php
-include "../settings/core.php";
-include "../settings/connection.php";
-// include "../actions/login_action.php";
+include_once "../settings/core.php";
+include_once "../settings/connection.php";
+// include_once "../actions/login_action.php";
 
 
 if (isset($_SESSION['user_id'])) {
@@ -14,7 +14,7 @@ if (isset($_SESSION['user_id'])) {
 
 function displayCartItems()
 {
-    include "../settings/connection.php";
+    include_once "../settings/connection.php";
     $userId = $_SESSION['user_id'];
 
     $cartQuery = "SELECT c.cart_id, p.product_id, p.name AS product_name, p.price, c.quantity
@@ -82,7 +82,7 @@ function displayCartItems()
 
 function displaySubTotal()
 {
-    include "../settings/connection.php";
+    include_once "../settings/connection.php";
     $userId = $_SESSION['user_id'];
 
     $cartQuery = "SELECT c.cart_id, p.product_id, p.name AS product_name, p.price, c.quantity
@@ -111,7 +111,7 @@ function displaySubTotal()
 
 function displayShipping()
 {
-    include "../settings/connection.php";
+    include_once "../settings/connection.php";
     $userId = $_SESSION['user_id'];
 
     $cartQuery = "SELECT c.cart_id, p.product_id, p.name AS product_name, p.price, c.quantity
@@ -139,7 +139,7 @@ function displayShipping()
 
 function displayTotal()
 {
-    include "../settings/connection.php";
+    include_once "../settings/connection.php";
     $userId = $_SESSION['user_id'];
 
     $cartQuery = "SELECT c.cart_id, p.product_id, p.name AS product_name, p.price, c.quantity
