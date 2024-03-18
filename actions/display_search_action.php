@@ -23,7 +23,7 @@ function displayElectronicProducts()
                 echo '<div class="product-img position-relative overflow-hidden">';
                 echo '<img class="img-fluid w-100" src="' . $imagePath . '" alt="' . $productName . '">';
                 echo '<div class="product-action">';
-                echo '<a class="btn btn-outline-dark btn-square" href="../views/confirm.php?product_id=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
+                echo '<a class="btn btn-outline-dark btn-square" href="../details/detail 1.php?product_id=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>';

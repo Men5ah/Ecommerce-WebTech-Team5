@@ -1,3 +1,42 @@
+<?php
+include "../actions/display_detail_action.php";
+include "../actions/display_cart_action.php";
+include "../actions/display_search_action.php";
+
+if (isset($_GET['product_id']) ) {
+    $productId = $_GET['product_id'];
+} else {
+    echo "Product ID not provided in the URL.";
+}
+?>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Adding to Cart</title>
+</head>
+
+<body> -->
+
+<!-- Confirmation form -->
+<!-- <form id="product_id" action="../actions/cart_action.php" method="POST"> -->
+<!-- Include the hidden input field for productId -->
+<!-- <input name="product_id" value=" -->
+<?php
+//  echo $productId;
+?>
+<!-- "> -->
+
+<!-- Button to trigger confirmation -->
+<!-- <button type="submit" class="btn btn-outline-dark btn-square">Add to Cart</button>
+    </form>
+</body>
+
+</html> -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,91 +48,91 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="../img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 
 <body>
     <!-- Topbar Start -->
     <div class="container-fluid">
-        
-            </div>
-            <div class="col-lg-6 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">My Account</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">Sign in</button>
-                            <button class="dropdown-item" type="button">Sign up</button>
-                            <button class="dropdown-item" type="button">Help</button>
-                        </div>
-                    </div>
-                    <div class="btn-group mx-2">
-                        <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">CEDIS</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">EUR</button>
-                            <button class="dropdown-item" type="button">GBP</button>
-                            <button class="dropdown-item" type="button">CAD</button>
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">EN</button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button">FR</button>
-                            <button class="dropdown-item" type="button">AF</button>
-                            <button class="dropdown-item" type="button">RU</button>
-                        </div>
-                    </div>
+
+    </div>
+    <div class="col-lg-6 text-center text-lg-right">
+        <div class="d-inline-flex align-items-center">
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">My Account</button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <button class="dropdown-item" type="button">Sign in</button>
+                    <button class="dropdown-item" type="button">Sign up</button>
+                    <button class="dropdown-item" type="button">Help</button>
                 </div>
-                <div class="d-inline-flex align-items-center d-block d-lg-none">
-                    <a href="" class="btn px-0 ml-2">
-                        <i class="fas fa-heart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
-                    </a>
-                    <a href="" class="btn px-0 ml-2">
-                        <i class="fas fa-shopping-cart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
-                    </a>
+            </div>
+            <div class="btn-group mx-2">
+                <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">CEDIS</button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <button class="dropdown-item" type="button">EUR</button>
+                    <button class="dropdown-item" type="button">GBP</button>
+                    <button class="dropdown-item" type="button">CAD</button>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">EN</button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <button class="dropdown-item" type="button">FR</button>
+                    <button class="dropdown-item" type="button">AF</button>
+                    <button class="dropdown-item" type="button">RU</button>
                 </div>
             </div>
         </div>
-        <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
-            <div class="col-lg-4">
-                <a href="" class="text-decoration-none">
-                    <span class="">Welcome</span>
-                    <span class="">Shopper</span>
-                </a>
-            </div>
-            <div class="col-lg-4 col-6 text-left">
-                <form action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for products">
-                        <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
-                                <i class="fa fa-search"></i>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-lg-4 col-6 text-right">
-                <p class="m-0">Customer Service</p>
-                <h5 class="m-0">002233456789</h5>
-            </div>
+        <div class="d-inline-flex align-items-center d-block d-lg-none">
+            <a href="" class="btn px-0 ml-2">
+                <i class="fas fa-heart text-dark"></i>
+                <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+            </a>
+            <a href="" class="btn px-0 ml-2">
+                <i class="fas fa-shopping-cart text-dark"></i>
+                <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+            </a>
         </div>
+    </div>
+    </div>
+    <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
+        <div class="col-lg-4">
+            <a href="" class="text-decoration-none">
+                <span class="">Welcome</span>
+                <span class="">Shopper</span>
+            </a>
+        </div>
+        <div class="col-lg-4 col-6 text-left">
+            <form action="">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for products">
+                    <div class="input-group-append">
+                        <span class="input-group-text bg-transparent text-primary">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-4 col-6 text-right">
+            <p class="m-0">Customer Service</p>
+            <h5 class="m-0">002233456789</h5>
+        </div>
+    </div>
     </div>
     <!-- Topbar End -->
 
@@ -102,15 +141,14 @@
     <div class="container-fluid bg-dark mb-30">
         <div class="row px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                    <a href="home.html" class="text-decoration-none">
-                        <span class="h1 text-uppercase text-primary bg-dark px-2">Ecom</span>
-                        <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Xpress</span>
-                    </a>
-                    <i class="fa fa-angle-down text-dark"></i>
+                <a href="../actions/seller_buyer_home_action.php" class="text-decoration-none">
+                    <span class="h1 text-uppercase text-primary bg-dark px-2">Ecom</span>
+                    <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Xpress</span>
+                </a>
+                <i class="fa fa-angle-down text-dark"></i>
                 </a>
                 <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
-                   
-                        
+
                 </nav>
             </div>
             <div class="col-lg-9">
@@ -124,7 +162,7 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="home.html" class="nav-item nav-link">Home</a>
+                            <a href="../actions/seller_buyer_home_action.php" class="nav-item nav-link">Home</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories<i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
@@ -165,10 +203,10 @@
                 <div id="product-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner bg-light">
                         <div class="carousel-item active">
-                            <img class="w-100 h-100" src="img/bag.jpeg" alt="Image">
+                            <img class="w-100 h-100" src="../img/bag.jpeg" alt="Image">
                         </div>
                     </div>
-                   
+
                 </div>
             </div>
 
@@ -187,9 +225,11 @@
                     </div>
                     <h3 class="font-weight-semi-bold mb-4">GHC150.00</h3>
                     <p class="mb-4">A stylish bag to take you everywhere</p>
-                    <div class="d-flex mb-3">
-                        <strong class="text-dark mr-3">Sizes:</strong>
-                        <form>
+                    <form id="product_id" action="" method="POST">
+                        <input type="hidden" name="product_id" value="<?php echo $productId; ?>">
+                        <div class="d-flex mb-3">
+                            <strong class="text-dark mr-3">Sizes:</strong>
+                            <!-- <form> -->
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" class="custom-control-input" id="size-1" name="size">
                                 <label class="custom-control-label" for="size-1">XS</label>
@@ -210,11 +250,11 @@
                                 <input type="radio" class="custom-control-input" id="size-5" name="size">
                                 <label class="custom-control-label" for="size-5">XL</label>
                             </div>
-                        </form>
-                    </div>
-                    <div class="d-flex mb-4">
-                        <strong class="text-dark mr-3">Colors:</strong>
-                        <form>
+                            <!-- </form> -->
+                        </div>
+                        <div class="d-flex mb-4">
+                            <strong class="text-dark mr-3">Colors:</strong>
+                            <!-- <form> -->
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" class="custom-control-input" id="color-1" name="color">
                                 <label class="custom-control-label" for="color-1">Black</label>
@@ -235,25 +275,33 @@
                                 <input type="radio" class="custom-control-input" id="color-5" name="color">
                                 <label class="custom-control-label" for="color-5">Green</label>
                             </div>
-                        </form>
-                    </div>
-                    <div class="d-flex align-items-center mb-4 pt-2">
-                        <div class="input-group quantity mr-3" style="width: 130px;">
-                            <div class="input-group-btn">
-                                <button class="btn btn-primary btn-minus">
-                                    <i class="fa fa-minus"></i>
-                                </button>
-                            </div>
-                            <input type="text" class="form-control bg-secondary border-0 text-center" value="1">
-                            <div class="input-group-btn">
-                                <button class="btn btn-primary btn-plus">
-                                    <i class="fa fa-plus"></i>
-                                </button>
-                            </div>
+                            <!-- </form> -->
                         </div>
-                        <button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Add To
-                            Cart</button>
-                    </div>
+                        <!-- <div class="d-flex align-items-center mb-4 pt-2"> -->
+                            <!-- <div class="input-group quantity mr-3" style="width: 130px;">
+                                <div class="input-group-btn">
+                                    <form action="../actions/reduce_quantity_action.php" method="post">
+                                        <button class="btn btn-primary btn-minus" type="submit" name="product_id" value="<?php echo $productId; ?>">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                                <input type="text" class="form-control bg-secondary border-0 text-center" value="1">
+                                <div class="input-group-btn">
+                                    <form action="../actions/increase_quantity_action.php" method="post">
+                                        <button class="btn btn-primary btn-plus" type="submit" name="product_id" value="<?php echo $productId; ?>">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div> -->
+                            <?php
+                            displayDetailItems()
+                            ?>
+                            <!-- <button class="btn btn-primary px-3" type="submit"><i class="fa fa-shopping-cart mr-1"></i> Add To
+                                Cart</button>
+                        </div> -->
+                    </form>
                     <div class="d-flex pt-2">
                         <!-- <strong class="text-dark mr-2">Share on:</strong>
                         <div class="d-inline-flex">
@@ -305,7 +353,7 @@
                                         <li class="list-group-item px-0">
                                             Padded laptop sleeve to protect your tech gear
                                         </li>
-                                      </ul> 
+                                    </ul>
                                 </div>
                                 <div class="col-md-6">
                                     <ul class="list-group list-group-flush">
@@ -321,7 +369,7 @@
                                         <li class="list-group-item px-0">
                                             Multiple pockets for organization on the go
                                         </li>
-                                      </ul> 
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -330,7 +378,7 @@
                                 <div class="col-md-6">
                                     <h4 class="mb-4">1 review for "Brown Quilt bag"</h4>
                                     <div class="media mb-4">
-                                        <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
+                                        <img src="../img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
                                         <div class="media-body">
                                             <h6>John Doe<small> - <i>01 Jan 2024</i></small></h6>
                                             <div class="text-primary mb-2">
@@ -393,7 +441,7 @@
                 <div class="owl-carousel related-carousel">
                     <div class="product-item bg-light">
                         <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/iron.jpeg" alt="">
+                            <img class="img-fluid w-100" src="../img/iron.jpeg" alt="">
                             <div class="product-action">
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -404,7 +452,8 @@
                         <div class="text-center py-4">
                             <a class="h6 text-decoration-none text-truncate" href="">Iron</a>
                             <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>GHC123.00</h5><h6 class="text-muted ml-2"><del>GHC123.00</del></h6>
+                                <h5>GHC123.00</h5>
+                                <h6 class="text-muted ml-2"><del>GHC123.00</del></h6>
                             </div>
                             <div class="d-flex align-items-center justify-content-center mb-1">
                                 <small class="fa fa-star text-primary mr-1"></small>
@@ -418,7 +467,7 @@
                     </div>
                     <div class="product-item bg-light">
                         <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/hoodie.jpeg" alt="">
+                            <img class="img-fluid w-100" src="../img/hoodie.jpeg" alt="">
                             <div class="product-action">
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -429,7 +478,8 @@
                         <div class="text-center py-4">
                             <a class="h6 text-decoration-none text-truncate" href="">Hoodie</a>
                             <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>GHC300.00</h5><h6 class="text-muted ml-2"><del>GHC300.00</del></h6>
+                                <h5>GHC300.00</h5>
+                                <h6 class="text-muted ml-2"><del>GHC300.00</del></h6>
                             </div>
                             <div class="d-flex align-items-center justify-content-center mb-1">
                                 <small class="fa fa-star text-primary mr-1"></small>
@@ -443,7 +493,7 @@
                     </div>
                     <div class="product-item bg-light">
                         <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/phone.jpeg" alt="">
+                            <img class="img-fluid w-100" src="../img/phone.jpeg" alt="">
                             <div class="product-action">
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -454,7 +504,8 @@
                         <div class="text-center py-4">
                             <a class="h6 text-decoration-none text-truncate" href="">Iphone</a>
                             <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>GHC1500.00</h5><h6 class="text-muted ml-2"><del>GHC1500.00</del></h6>
+                                <h5>GHC1500.00</h5>
+                                <h6 class="text-muted ml-2"><del>GHC1500.00</del></h6>
                             </div>
                             <div class="d-flex align-items-center justify-content-center mb-1">
                                 <small class="fa fa-star text-primary mr-1"></small>
@@ -468,7 +519,7 @@
                     </div>
                     <div class="product-item bg-light">
                         <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/sharpeners.jpeg" alt="">
+                            <img class="img-fluid w-100" src="../img/sharpeners.jpeg" alt="">
                             <div class="product-action">
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -479,7 +530,8 @@
                         <div class="text-center py-4">
                             <a class="h6 text-decoration-none text-truncate" href="">sharpeners</a>
                             <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>GHC3.00</h5><h6 class="text-muted ml-2"><del>GHC3.00</del></h6>
+                                <h5>GHC3.00</h5>
+                                <h6 class="text-muted ml-2"><del>GHC3.00</del></h6>
                             </div>
                             <div class="d-flex align-items-center justify-content-center mb-1">
                                 <small class="fa fa-star text-primary mr-1"></small>
@@ -493,7 +545,7 @@
                     </div>
                     <div class="product-item bg-light">
                         <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/charger.jpeg" alt="">
+                            <img class="img-fluid w-100" src="../img/charger.jpeg" alt="">
                             <div class="product-action">
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -504,7 +556,8 @@
                         <div class="text-center py-4">
                             <a class="h6 text-decoration-none text-truncate" href="">charger</a>
                             <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>GHC123.00</h5><h6 class="text-muted ml-2"><del>GHC123.00</del></h6>
+                                <h5>GHC123.00</h5>
+                                <h6 class="text-muted ml-2"><del>GHC123.00</del></h6>
                             </div>
                             <div class="d-flex align-items-center justify-content-center mb-1">
                                 <small class="fa fa-star text-primary mr-1"></small>
@@ -534,40 +587,40 @@
                 <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>ecomxpress@gmail.com</p>
                 <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>0200342465</p>
             </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">My Account</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Categories</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Details</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Cart</a>
-                            <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                            <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+            <div class="col-md-4 mb-5">
+                <h5 class="text-secondary text-uppercase mb-4">My Account</h5>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Categories</a>
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shop Details</a>
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Cart</a>
+                    <a class="text-secondary mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
+                    <a class="text-secondary" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <h5 class="text-secondary text-uppercase mb-4">Newsletter</h5>
+                <p>For Promotion,Sales and Discounts </p>
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Your Email Address">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary">Sign Up</button>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="text-secondary text-uppercase mb-4">Newsletter</h5>
-                        <p>For Promotion,Sales and Discounts </p>
-                        <form action="">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Your Email Address">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary">Sign Up</button>
-                                </div>
-                            </div>
-                        </form>
-                        <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
-                        <div class="d-flex">
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
+                </form>
+                <h6 class="text-secondary text-uppercase mt-4 mb-3">Follow Us</h6>
+                <div class="d-flex">
+                    <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-primary btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
-       
+    </div>
+    </div>
+
     <!-- Footer End -->
 
 
@@ -578,8 +631,8 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Contact Javascript File -->
     <script src="mail/jqBootstrapValidation.min.js"></script>
