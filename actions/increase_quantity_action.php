@@ -17,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Close the statement
         $reduceStmt->close();
 
-<<<<<<< HEAD
         // echo $_POST['condition'];
         // Redirect back to the cart page
         if (isset($_POST['condition'])) {
@@ -33,10 +32,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 else {
     echo "Error";
-=======
-        // Redirect back to the cart page
-        header('Location: ../views/cart.php');
-        exit();
-    }
->>>>>>> cf0269fa4fcb7ad59311f49d900845c208b548a7
 }
