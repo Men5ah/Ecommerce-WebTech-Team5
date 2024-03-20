@@ -9,10 +9,8 @@ CREATE TABLE Person (
     Email VARCHAR(105) UNIQUE NOT NULL,
     Password VARCHAR(155) NOT NULL,
     Phone_Number VARCHAR(11) NOT NULL,
-    City ENUM ('Accra', 'Kumasi', 'Tamale', 'Takoradi', 'Tema', 'Cape Coast') NOT NULL,
-    Street VARCHAR(255) NOT NULL,
-    Role ENUM('User', 'Seller') NOT NULL,
-    role_id INT DEFAULT 2
+    City VARCHAR(11) NOT NULL,
+    role_id INT
 );
 
 CREATE TABLE Categories (
@@ -34,12 +32,12 @@ CREATE TABLE Product (
 
 -- Inserting data into Categories table
 INSERT INTO Categories (category_id, name, description) VALUES
-(1, 'Electronics', 'Electronic devices and gadgets'),
-(2, 'Fashion', 'Clothing items for men and women'),
-(3, 'Stationery', 'A wide range of books in various genres'),
-(4, 'Skincare', 'A variety of skincare products'),
-(5, 'Fruits and Veggies', 'A variety of fruits and vegetables'),
-(6, 'Hygiene', 'A variety of hygienic care products');
+(1, 'electronics', 'Electronic devices and gadgets'),
+(2, 'fashion', 'Clothing items for men and women'),
+(3, 'stationery', 'A wide range of books in various genres'),
+(4, 'skincare', 'A variety of skincare products'),
+(5, 'fruits and Veggies', 'A variety of fruits and vegetables'),
+(6, 'hygiene', 'A variety of hygienic care products');
 
 -- Inserting data into Product table
 -- INSERT INTO Product (name, description, price, quantity_available, category_id, image_path) VALUES

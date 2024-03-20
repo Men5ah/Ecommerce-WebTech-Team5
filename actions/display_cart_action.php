@@ -80,10 +80,40 @@ function displayCartItems()
 }
 
 
+// function displaySubTotal()
+// {
+//     include "../settings/connection.php";
+//     $userId = $_SESSION['user_id'];
+
+//     $cartQuery = "SELECT c.cart_id, p.product_id, p.name AS product_name, p.price, c.quantity
+//                   FROM Carts c
+//                   INNER JOIN Product p ON c.product_id = p.product_id
+//                   WHERE c.user_id = ?";
+//     $cartStmt = $conn->prepare($cartQuery);
+//     $cartStmt->bind_param("i", $userId);
+//     $cartStmt->execute();
+//     $cartResult = $cartStmt->get_result();
+
+//     if ($cartResult->num_rows > 0) {
+//         while ($row = $cartResult->fetch_assoc()) {
+//             $cartId = $row['cart_id'];
+//             $productId = $row['product_id'];
+//             $productName = $row['product_name'];
+//             $price = $row['price'];
+//             $quantity = $row['quantity'];
+//             $subtotal = $price * $quantity;
+
+//             echo '<td class="align-middle">$' . $subtotal . '</td>';
+//             // $subtotal;
+//         }
+//     }
+// }
+
 function displaySubTotal()
 {
     include "../settings/connection.php";
     $userId = $_SESSION['user_id'];
+    $totalSubtotal = 0; // Initialize totalSubtotal variable to accumulate subtotal for all items
 
     $cartQuery = "SELECT c.cart_id, p.product_id, p.name AS product_name, p.price, c.quantity
                   FROM Carts c
@@ -95,19 +125,22 @@ function displaySubTotal()
     $cartResult = $cartStmt->get_result();
 
     if ($cartResult->num_rows > 0) {
+        $totalSubtotal = 0;
         while ($row = $cartResult->fetch_assoc()) {
-            $cartId = $row['cart_id'];
-            $productId = $row['product_id'];
-            $productName = $row['product_name'];
             $price = $row['price'];
             $quantity = $row['quantity'];
             $subtotal = $price * $quantity;
+            $totalSubtotal += $subtotal; // Accumulate subtotal for each item
 
-            echo '<td class="align-middle">$' . $subtotal . '</td>';
-            // $subtotal;
+            // Display other data for each item (if needed)
+            // echo '<td class="align-middle">$' . $subtotal . '</td>';
         }
+        // Display the total subtotal after looping through all items
+        echo '<td class="align-middle">$' . $totalSubtotal . '</td>';
     }
+
 }
+
 
 function displayShipping()
 {
@@ -124,6 +157,7 @@ function displayShipping()
     $cartResult = $cartStmt->get_result();
 
     if ($cartResult->num_rows > 0) {
+        $totalSubtotal = 0;
         while ($row = $cartResult->fetch_assoc()) {
             $cartId = $row['cart_id'];
             $productId = $row['product_id'];
@@ -131,9 +165,9 @@ function displayShipping()
             $price = $row['price'];
             $quantity = $row['quantity'];
             $subtotal = $price * $quantity;
-
-            echo '<td class="align-middle">$' . round(($subtotal / 6.67), 2) . '</td>';
+            $totalSubtotal += $subtotal; // Accumulate subtotal for each item
         }
+        echo '<td class="align-middle">$' . round(((6.67/100) * $totalSubtotal), 2) . '</td>';
     }
 }
 
@@ -152,6 +186,7 @@ function displayTotal()
     $cartResult = $cartStmt->get_result();
 
     if ($cartResult->num_rows > 0) {
+        $totalSubtotal = 0;
         while ($row = $cartResult->fetch_assoc()) {
             $cartId = $row['cart_id'];
             $productId = $row['product_id'];
@@ -159,8 +194,9 @@ function displayTotal()
             $price = $row['price'];
             $quantity = $row['quantity'];
             $subtotal = $price * $quantity;
+            $totalSubtotal += $subtotal; // Accumulate subtotal for each item
 
-            echo '<td class="align-middle">$' . round($subtotal + ($subtotal / 6.67), 2) . '</td>';
         }
+        echo '<td class="align-middle">$' . round($totalSubtotal + ((6.67/100) * $totalSubtotal), 2) . '</td>';
     }
 }
