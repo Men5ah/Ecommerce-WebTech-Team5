@@ -53,12 +53,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Close the statement
         $reduceStmt->close();
 
-        echo $_POST['condition'];
+        // echo $_POST['condition'];
         // Redirect back to the cart page
         if (isset($_POST['condition'])) {
             header('Location: ../details/detail 1.php?product_id=' . $productID);
         } else {
-            // header('Location: ../views/cart.php');
+            header('Location: ../views/cart.php');
         }
         // header('Location: ../details/detail 1.php');
         exit();

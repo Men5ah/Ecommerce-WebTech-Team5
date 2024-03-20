@@ -29,7 +29,7 @@ function validateForm() {
     }
     // Validation for phone
     var phone = document.getElementById('phone').value.trim();
-    var phoneRegex = /^\d{10}$/;
+    var phoneRegex = /^\d{14}$/;
     if (!phoneRegex.test(phone)) {
         showMessage('Invalid phone number. Please enter a 10-digit number.', 'red');
         return;
@@ -42,10 +42,15 @@ function validateForm() {
         return;
     }
     // Validation for password
-    var password = document.getElementById('password').value;
+    var password1 = document.getElementById('password').value;
+    var password2 = document.getElementById('re-password').value;
     var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    if (!passwordRegex.test(password)) {
+    if (!passwordRegex.test(password1)) {
         showMessage('Password must be at least 8 characters long and include a capital letter, a number, and a symbol.', 'red');
+        return;
+    }
+    if (password1 !== password2) {
+        showMessage('Passwords do not match.', 'red');
         return;
     }
 

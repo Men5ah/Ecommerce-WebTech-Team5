@@ -225,7 +225,7 @@ if (isset($_GET['product_id']) ) {
                     </div>
                     <h3 class="font-weight-semi-bold mb-4">GHC150.00</h3>
                     <p class="mb-4">A stylish bag to take you everywhere</p>
-                    <form id="product_id" action="" method="POST">
+                    <!-- <form id="product_id" action="" method="POST"> -->
                         <input type="hidden" name="product_id" value="<?php echo $productId; ?>">
                         <div class="d-flex mb-3">
                             <strong class="text-dark mr-3">Sizes:</strong>
@@ -281,7 +281,10 @@ if (isset($_GET['product_id']) ) {
                             <!-- <div class="input-group quantity mr-3" style="width: 130px;">
                                 <div class="input-group-btn">
                                     <form action="../actions/reduce_quantity_action.php" method="post">
-                                        <button class="btn btn-primary btn-minus" type="submit" name="product_id" value="<?php echo $productId; ?>">
+                                        <button class="btn btn-primary btn-minus" type="submit" name="product_id" value="
+                                        <?php 
+                                        // echo $productId; 
+                                        ?>">
                                             <i class="fa fa-minus"></i>
                                         </button>
                                     </form>
@@ -289,7 +292,10 @@ if (isset($_GET['product_id']) ) {
                                 <input type="text" class="form-control bg-secondary border-0 text-center" value="1">
                                 <div class="input-group-btn">
                                     <form action="../actions/increase_quantity_action.php" method="post">
-                                        <button class="btn btn-primary btn-plus" type="submit" name="product_id" value="<?php echo $productId; ?>">
+                                        <button class="btn btn-primary btn-plus" type="submit" name="product_id" value="
+                                        <?php
+                                        // echo $productId;
+                                        ?>">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </form>
@@ -301,8 +307,8 @@ if (isset($_GET['product_id']) ) {
                             <!-- <button class="btn btn-primary px-3" type="submit"><i class="fa fa-shopping-cart mr-1"></i> Add To
                                 Cart</button>
                         </div> -->
-                    </form>
-                    <div class="d-flex pt-2">
+                    <!-- </form> -->
+                    <!-- <div class="d-flex pt-2"> -->
                         <!-- <strong class="text-dark mr-2">Share on:</strong>
                         <div class="d-inline-flex">
                             <a class="text-dark px-2" href="">
@@ -318,7 +324,7 @@ if (isset($_GET['product_id']) ) {
                                 <i class="fab fa-pinterest"></i>
                             </a>
                         </div> -->
-                    </div>
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
