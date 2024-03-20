@@ -6,6 +6,8 @@ include "../settings/connection.php";
 
 if (isset($_SESSION['user_id'])) {
     $userId = $_SESSION['user_id'];
+        // Your other code
+
     // Your other code
 } else {
     // Handle the case when the user is not logged in
