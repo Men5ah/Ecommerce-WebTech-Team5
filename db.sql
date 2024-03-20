@@ -25,6 +25,7 @@ CREATE TABLE Product (
     description TEXT,
     price DECIMAL(10, 2),
     quantity_available INT,
+    quantity_chosen INT,
     category_id INT,
     image_path VARCHAR(255),
     FOREIGN KEY (category_id) REFERENCES Categories(category_id)

@@ -5,11 +5,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $description = $_POST["description"];
     $price = $_POST["price"];
-    $quantity = $_POST["quantity"];
+    $quantity_available = $_POST["quantity"];
+    $quantity_chosen = 0;
     $category_id = $_POST["category"];
 
-    $sql = "INSERT INTO Product (name, description, price, quantity_available, category_id, image_path)
-    VALUES ('$name', '$description', $price, $quantity, $category_id, '../img/default image.jpg')";
+    $sql = "INSERT INTO Product (name, description, price, quantity_available, quantity_chosen, category_id, image_path)
+    VALUES ('$name', '$description', '$price', '$quantity_available', '$quantity_chosen', '$category_id', '../img/default image.jpg')";
 
     if ($conn->query($sql) === TRUE) {
         // Insert successful, determine redirection based on category
