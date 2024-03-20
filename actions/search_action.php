@@ -4,8 +4,13 @@ include "../settings/connection.php";
 if (isset($_POST['searchQuery'])) {
     $searchQuery = $_POST['searchQuery'];
 
+<<<<<<< HEAD
     $sql = "SELECT p.*, c.name as category_name FROM Product p
             INNER JOIN Categories c ON p.category_id = c.category_id
+=======
+    $sql = "SELECT p.*, c.name as category_name FROM product p
+            INNER JOIN categories c ON p.category_id = c.category_id
+>>>>>>> cf0269fa4fcb7ad59311f49d900845c208b548a7
             WHERE p.name LIKE ?";
     $stmt = $conn->prepare($sql);
 
