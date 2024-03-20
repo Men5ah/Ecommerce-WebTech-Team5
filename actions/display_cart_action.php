@@ -6,11 +6,8 @@ include "../settings/connection.php";
 
 if (isset($_SESSION['user_id'])) {
     $userId = $_SESSION['user_id'];
-<<<<<<< HEAD
         // Your other code
 
-=======
->>>>>>> cf0269fa4fcb7ad59311f49d900845c208b548a7
     // Your other code
 } else {
     // Handle the case when the user is not logged in
@@ -85,7 +82,6 @@ function displayCartItems()
 }
 
 
-<<<<<<< HEAD
 // function displaySubTotal()
 // {
 //     include "../settings/connection.php";
@@ -115,16 +111,11 @@ function displayCartItems()
 //     }
 // }
 
-=======
->>>>>>> cf0269fa4fcb7ad59311f49d900845c208b548a7
 function displaySubTotal()
 {
     include "../settings/connection.php";
     $userId = $_SESSION['user_id'];
-<<<<<<< HEAD
     $totalSubtotal = 0; // Initialize totalSubtotal variable to accumulate subtotal for all items
-=======
->>>>>>> cf0269fa4fcb7ad59311f49d900845c208b548a7
 
     $cartQuery = "SELECT c.cart_id, p.product_id, p.name AS product_name, p.price, c.quantity
                   FROM Carts c
@@ -136,7 +127,6 @@ function displaySubTotal()
     $cartResult = $cartStmt->get_result();
 
     if ($cartResult->num_rows > 0) {
-<<<<<<< HEAD
         $totalSubtotal = 0;
         while ($row = $cartResult->fetch_assoc()) {
             $price = $row['price'];
@@ -154,22 +144,6 @@ function displaySubTotal()
 }
 
 
-=======
-        while ($row = $cartResult->fetch_assoc()) {
-            $cartId = $row['cart_id'];
-            $productId = $row['product_id'];
-            $productName = $row['product_name'];
-            $price = $row['price'];
-            $quantity = $row['quantity'];
-            $subtotal = $price * $quantity;
-
-            echo '<td class="align-middle">$' . $subtotal . '</td>';
-            // $subtotal;
-        }
-    }
-}
-
->>>>>>> cf0269fa4fcb7ad59311f49d900845c208b548a7
 function displayShipping()
 {
     include "../settings/connection.php";
@@ -185,10 +159,7 @@ function displayShipping()
     $cartResult = $cartStmt->get_result();
 
     if ($cartResult->num_rows > 0) {
-<<<<<<< HEAD
         $totalSubtotal = 0;
-=======
->>>>>>> cf0269fa4fcb7ad59311f49d900845c208b548a7
         while ($row = $cartResult->fetch_assoc()) {
             $cartId = $row['cart_id'];
             $productId = $row['product_id'];
@@ -196,15 +167,9 @@ function displayShipping()
             $price = $row['price'];
             $quantity = $row['quantity'];
             $subtotal = $price * $quantity;
-<<<<<<< HEAD
             $totalSubtotal += $subtotal; // Accumulate subtotal for each item
         }
         echo '<td class="align-middle">$' . round(((6.67/100) * $totalSubtotal), 2) . '</td>';
-=======
-
-            echo '<td class="align-middle">$' . round(($subtotal / 6.67), 2) . '</td>';
-        }
->>>>>>> cf0269fa4fcb7ad59311f49d900845c208b548a7
     }
 }
 
@@ -223,10 +188,7 @@ function displayTotal()
     $cartResult = $cartStmt->get_result();
 
     if ($cartResult->num_rows > 0) {
-<<<<<<< HEAD
         $totalSubtotal = 0;
-=======
->>>>>>> cf0269fa4fcb7ad59311f49d900845c208b548a7
         while ($row = $cartResult->fetch_assoc()) {
             $cartId = $row['cart_id'];
             $productId = $row['product_id'];
@@ -234,15 +196,9 @@ function displayTotal()
             $price = $row['price'];
             $quantity = $row['quantity'];
             $subtotal = $price * $quantity;
-<<<<<<< HEAD
             $totalSubtotal += $subtotal; // Accumulate subtotal for each item
 
         }
         echo '<td class="align-middle">$' . round($totalSubtotal + ((6.67/100) * $totalSubtotal), 2) . '</td>';
-=======
-
-            echo '<td class="align-middle">$' . round($subtotal + ($subtotal / 6.67), 2) . '</td>';
-        }
->>>>>>> cf0269fa4fcb7ad59311f49d900845c208b548a7
     }
 }
