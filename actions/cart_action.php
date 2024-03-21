@@ -30,17 +30,17 @@ if (isset($_POST['product_id'])) {
             $checkIfExistsRow = $checkIfExistsResult->fetch_assoc();
             $cartQuantity = $checkIfExistsRow['quantity'];
             $newQuantity = min($quantityChosen, $quantityAvailable); // Ensure the cart quantity doesn't exceed available quantity
-            
-            if ($cartQuantity + $newQuantity > $quantityAvailable) {
-                echo "The quantity is insufficient.";
-                exit(); // Stop further execution
-            }
 
-            $updateQuantityQuery = "UPDATE Carts SET quantity = ? WHERE user_id = ? AND product_id = ?";
-            $updateQuantityStmt = $conn->prepare($updateQuantityQuery);
-            $updateQuantityStmt->bind_param("iii", $newQuantity, $userId, $productId);
-            $updateQuantityStmt->execute();
-            $updateQuantityStmt->close();
+            if ($quantityChosen > $quantityAvailable) {
+                echo "The quantity is insufficient.";
+                exit();
+            } else {
+                $updateQuantityQuery = "UPDATE Carts SET quantity = ? WHERE user_id = ? AND product_id = ?";
+                $updateQuantityStmt = $conn->prepare($updateQuantityQuery);
+                $updateQuantityStmt->bind_param("iii", $newQuantity, $userId, $productId);
+                $updateQuantityStmt->execute();
+                $updateQuantityStmt->close();
+            }
         } else {
             // If the product is not in the cart, add it with the quantity chosen from the Product table
             if ($quantityChosen > $quantityAvailable) {
@@ -64,7 +64,8 @@ if (isset($_POST['product_id'])) {
     }
 } else {
     // Invalid request, product ID not provided
-    echo "Invalid request.";
+    // echo "Invalid request.";
+    // $conn->close();
 }
 
 // Close connection
@@ -185,12 +186,12 @@ $conn->close();
 //             $productStmt->bind_param("i", $productId);
 //             $productStmt->execute();
 //             $productResult = $productStmt->get_result();
-        
+
 //             if ($productResult->num_rows > 0) {
 //                 $productRow = $productResult->fetch_assoc();
 //                 $quantityChosen = $productRow['quantity_chosen'];
 //                 $quantityAvailable = $productRow['quantity_available'];
-        
+
 //                 if ($quantityChosen < $quantityAvailable) {
 //                     // If quantity chosen is less than quantity available, update the quantity in the cart
 //                     $updateQuantityQuery = "UPDATE Carts SET quantity = ? WHERE user_id = ? AND product_id = ?";
@@ -198,7 +199,7 @@ $conn->close();
 //                     $updateQuantityStmt = $conn->prepare($updateQuantityQuery);
 //                     $updateQuantityStmt->bind_param("iii", $newQuantity, $userId, $productId);
 //                     $updateQuantityStmt->execute();
-        
+
 //                     header("Location: ../views/cart.php");
 //                     exit();
 //                 } else {
@@ -216,7 +217,7 @@ $conn->close();
 //             echo "Product not found in the cart.";
 //             // Redirect or display an error message as per your requirement
 //         }
-        
+
 //     } else {
 //         echo "Product with ID $productId does not exist.";
 //     }

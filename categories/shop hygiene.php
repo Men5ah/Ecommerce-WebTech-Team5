@@ -1,3 +1,7 @@
+<?php
+include "../settings/connection.php";
+include "../actions/cart_action.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -145,7 +149,9 @@
                             </a>
                             <a href="../views/cart.php" class="btn px-0 ml-3">
                                 <i class="fas fa-shopping-cart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">
+                                    <?php getCartCount(); ?>
+                                </span>                            
                             </a>
                         </div>
                     </div>

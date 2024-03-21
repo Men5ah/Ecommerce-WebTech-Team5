@@ -17,17 +17,6 @@ function displayProductDetails($productId)
         $quantity_chosen = isset($row["quantity_chosen"]) ? $row["quantity_chosen"] : 0; // Set quantity to 0 if not found in cart
 
         // Display product details
-        // echo '<div class="container-fluid pb-5">';
-        // echo '<div class="row px-xl-5">';
-        // echo '<div class="col-lg-5 mb-30">';
-        // echo '<div id="product-carousel" class="carousel slide" data-ride="carousel">';
-        // echo '<div class="carousel-inner bg-light">';
-        // echo '<div class="carousel-item active">';
-        // echo '<img class="w-100 h-100" src="../img/product-' . $productId . '.jpg" alt="Image">';
-        // echo '</div>';
-        // echo '</div>';
-        // echo '</div>';
-        // echo '</div>';
         echo '<div class="container-fluid pb-5">';
         echo '<div class="row px-xl-5">';
         echo '<div class="col-lg-5 mb-30">';
@@ -41,7 +30,6 @@ function displayProductDetails($productId)
         echo '</div>';
         echo '<div class="col-lg-7 h-auto mb-30">';
         echo '<div class="h-100 bg-light p-30">';
-
         echo '<h3>' . $productName . '</h3>';
         echo '<div class="d-flex mb-3">';
         echo '<div class="text-primary mr-2">';
@@ -79,9 +67,6 @@ function displayProductDetails($productId)
         }
         echo '</form>';
         echo '</div>';
-
-
-
         echo '<div class="d-flex align-items-center mb-4 pt-2">';
         echo '<div class="input-group quantity mr-3" style="width: 130px;">';
         echo '<div class="input-group-btn">';
@@ -105,67 +90,6 @@ function displayProductDetails($productId)
         echo '<button class="btn btn-primary px-3" type="submit"><i class="fa fa-shopping-cart mr-1"></i> Add To Cart</button>';
         echo '</form>';
         echo '</div>';
-
-
-
-    // echo '<div class="container-fluid pb-5">';
-    // echo '<div class="row px-xl-5">';
-    // echo '<div class="col-lg-5 mb-30">';
-    // echo '<div id="product-carousel" class="carousel slide" data-ride="carousel">';
-    // echo '<div class="carousel-inner bg-light">';
-    // echo '<div class="carousel-item active">';
-    // echo '<img class="w-100 h-100" src="../img/product-' . $productId . '.jpg" alt="Image">';
-    // echo '</div>';
-    // echo '</div>';
-    // echo '</div>';
-    // echo '</div>';
-
-    // echo '<div class="col-lg-7 h-auto mb-30">';
-    // echo '<div class="h-100 bg-light p-30">';
-    // echo '<h3>' . $productName . '</h3>';
-    // echo '<div class="d-flex mb-3">';
-    // echo '<div class="text-primary mr-2">';
-    // echo '<small class="fas fa-star"></small>';
-    // echo '<small class="fas fa-star"></small>';
-    // echo '<small class="fas fa-star"></small>';
-    // echo '<small class="fas fa-star-half-alt"></small>';
-    // echo '<small class="far fa-star"></small>';
-    // echo '</div>';
-    // echo '<small class="pt-1">(99 Reviews)</small>';
-    // echo '</div>';
-    // echo '<h3 class="font-weight-semi-bold mb-4">' . $productPrice . '</h3>';
-    // echo '<p class="mb-4">' . $productDescription . '</p>';
-
-    // // Sizes
-    // echo '<div class="d-flex mb-3">';
-    // echo '<strong class="text-dark mr-3">Sizes:</strong>';
-    // echo '<form>';
-    // foreach ($sizes as $size) {
-    //     echo '<div class="custom-control custom-radio custom-control-inline">';
-    //     echo '<input type="radio" class="custom-control-input" id="size-' . $size . '" name="size">';
-    //     echo '<label class="custom-control-label" for="size-' . $size . '">' . $size . '</label>';
-    //     echo '</div>';
-    // }
-    // echo '</form>';
-    // echo '</div>';
-
-    // // Colors
-    // echo '<div class="d-flex mb-4">';
-    // echo '<strong class="text-dark mr-3">Colors:</strong>';
-    // echo '<form>';
-    // foreach ($colors as $color) {
-    //     echo '<div class="custom-control custom-radio custom-control-inline">';
-    //     echo '<input type="radio" class="custom-control-input" id="color-' . $color . '" name="color">';
-    //     echo '<label class="custom-control-label" for="color-' . $color . '">' . $color . '</label>';
-    //     echo '</div>';
-    // }
-    // echo '</form>';
-    // echo '</div>';
-
-    // echo '</div>';
-    // echo '</div>';
-    // echo '</div>';
-    // echo '</div>';
     } else {
         echo "Product not found.";
     }

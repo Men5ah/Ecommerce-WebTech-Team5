@@ -7,13 +7,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $price = $_POST["price"];
     $quantity_available = $_POST["quantity"];
     $quantity_chosen = 0;
-    $category_id = $_POST["category"];
+    $categoryID = $_POST["category"];
+    // $imageData = $_POST["image_data"];
 
-    $sql = "INSERT INTO Product (name, description, price, quantity_available, quantity_chosen, category_id, image_path)
-    VALUES ('$name', '$description', '$price', '$quantity_available', '$quantity_chosen', '$category_id', '../img/default image.jpg')";
+    // Process image upload
+    $imageData = file_get_contents($_FILES["image_path"]["tmp_name"]);
+    $imageData = mysqli_real_escape_string($conn, $imageData);
+
+    $sql = "INSERT INTO Product (name, description, price, quantity_available, quantity_chosen, category_id, image_data)
+    VALUES ('$name', '$description', '$price', '$quantity_available', '$quantity_chosen', '$categoryID', '$imageData')";
 
     if ($conn->query($sql) === TRUE) {
-        switch ($category_id) {
+        switch ($categoryID) {
             case 1:
                 header("Location: ../categories/shop electronics.php");
                 exit;
@@ -45,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $conn->close();
 } elseif (isset($_GET["skip"]) && $_GET["skip"] == "true") {
-    header("Location: ../views/home.php?No additions=true");
+    header("Location: ../views/sellerhome.php?No additions=true");
     exit();
 } else {
     echo "POST REQUEST WAS NOT SENT";
