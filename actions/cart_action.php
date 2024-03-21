@@ -2,7 +2,6 @@
 include "../settings/connection.php";
 include "../settings/core.php";
 
-
 if (isset($_POST['product_id'])) {
     $productId = $_POST['product_id'];
     $userId = $_SESSION['user_id'];
@@ -28,14 +27,27 @@ if (isset($_POST['product_id'])) {
 
         if ($checkIfExistsResult->num_rows > 0) {
             // If the product already exists in the cart, update the quantity based on quantity_chosen
+            $checkIfExistsRow = $checkIfExistsResult->fetch_assoc();
+            $cartQuantity = $checkIfExistsRow['quantity'];
+            $newQuantity = min($quantityChosen, $quantityAvailable); // Ensure the cart quantity doesn't exceed available quantity
+            
+            if ($cartQuantity + $newQuantity > $quantityAvailable) {
+                echo "The quantity is insufficient.";
+                exit(); // Stop further execution
+            }
+
             $updateQuantityQuery = "UPDATE Carts SET quantity = ? WHERE user_id = ? AND product_id = ?";
             $updateQuantityStmt = $conn->prepare($updateQuantityQuery);
-            $newQuantity = min($quantityChosen, $quantityAvailable); // Ensure the cart quantity doesn't exceed available quantity
             $updateQuantityStmt->bind_param("iii", $newQuantity, $userId, $productId);
             $updateQuantityStmt->execute();
             $updateQuantityStmt->close();
         } else {
             // If the product is not in the cart, add it with the quantity chosen from the Product table
+            if ($quantityChosen > $quantityAvailable) {
+                echo "The quantity is insufficient.";
+                exit(); // Stop further execution
+            }
+
             $addToCartQuery = "INSERT INTO Carts (user_id, product_id, quantity) VALUES (?, ?, ?)";
             $addToCartStmt = $conn->prepare($addToCartQuery);
             $addToCartStmt->bind_param("iii", $userId, $productId, $quantityChosen);
@@ -57,6 +69,69 @@ if (isset($_POST['product_id'])) {
 
 // Close connection
 $conn->close();
+
+
+
+
+
+
+
+
+
+// if (isset($_POST['product_id'])) {
+//     $productId = $_POST['product_id'];
+//     $userId = $_SESSION['user_id'];
+
+//     // Check if the product exists in the Product table
+//     $checkProductQuery = "SELECT quantity_chosen, quantity_available FROM Product WHERE product_id = ?";
+//     $checkProductStmt = $conn->prepare($checkProductQuery);
+//     $checkProductStmt->bind_param("i", $productId);
+//     $checkProductStmt->execute();
+//     $checkProductResult = $checkProductStmt->get_result();
+
+//     if ($checkProductResult->num_rows > 0) {
+//         $productRow = $checkProductResult->fetch_assoc();
+//         $quantityChosen = $productRow['quantity_chosen'];
+//         $quantityAvailable = $productRow['quantity_available'];
+
+//         // Check if the product is already in the cart
+//         $checkIfExistsQuery = "SELECT quantity FROM Carts WHERE user_id = ? AND product_id = ?";
+//         $checkIfExistsStmt = $conn->prepare($checkIfExistsQuery);
+//         $checkIfExistsStmt->bind_param("ii", $userId, $productId);
+//         $checkIfExistsStmt->execute();
+//         $checkIfExistsResult = $checkIfExistsStmt->get_result();
+
+//         if ($checkIfExistsResult->num_rows > 0) {
+//             // If the product already exists in the cart, update the quantity based on quantity_chosen
+//             $updateQuantityQuery = "UPDATE Carts SET quantity = ? WHERE user_id = ? AND product_id = ?";
+//             $updateQuantityStmt = $conn->prepare($updateQuantityQuery);
+//             $newQuantity = min($quantityChosen, $quantityAvailable); // Ensure the cart quantity doesn't exceed available quantity
+//             $updateQuantityStmt->bind_param("iii", $newQuantity, $userId, $productId);
+//             $updateQuantityStmt->execute();
+//             $updateQuantityStmt->close();
+//         } else {
+//             // If the product is not in the cart, add it with the quantity chosen from the Product table
+//             $addToCartQuery = "INSERT INTO Carts (user_id, product_id, quantity) VALUES (?, ?, ?)";
+//             $addToCartStmt = $conn->prepare($addToCartQuery);
+//             $addToCartStmt->bind_param("iii", $userId, $productId, $quantityChosen);
+//             $addToCartStmt->execute();
+//             $addToCartStmt->close();
+//         }
+
+//         // Redirect to cart page after updating/adding to cart
+//         header("Location: ../views/cart.php");
+//         exit();
+//     } else {
+//         // Product with the provided ID does not exist
+//         echo "Product with ID $productId does not exist.";
+//     }
+// } else {
+//     // Invalid request, product ID not provided
+//     echo "Invalid request.";
+// }
+
+// // Close connection
+// $conn->close();
 
 
 // if (isset($_POST['product_id'])) {
@@ -170,7 +245,7 @@ function getCartCount()
         echo $cartCount;
     }
 
-    return 0;
+    // return 0;
 }
 
 // function getSubTotal()
