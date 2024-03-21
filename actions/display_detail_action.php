@@ -13,8 +13,8 @@ function displayProductDetails($productId)
         $productName = $row["name"];
         $productDescription = $row["description"];
         $productPrice = $row["price"];
-        $imagePath = $row["image_path"];
         $quantity_chosen = isset($row["quantity_chosen"]) ? $row["quantity_chosen"] : 0; // Set quantity to 0 if not found in cart
+        $imageData = $row["image_data"];
 
         // Display product details
         echo '<div class="container-fluid pb-5">';
@@ -23,7 +23,8 @@ function displayProductDetails($productId)
         echo '<div id="product-carousel" class="carousel slide" data-ride="carousel">';
         echo '<div class="carousel-inner bg-light">';
         echo '<div class="carousel-item active">';
-        echo '<img class="w-100 h-100" src="../img/product-' . $productId . '.jpeg" alt="Image">';
+        // echo '<img class="w-100 h-100" src="../img/product-' . $productId . '.jpeg" alt="Image">';
+        echo '<img class="img-fluid w-100" src="data:image/jpeg;base64,' . base64_encode($imageData) . '" alt="' . $productName . '">';
         echo '</div>';
         echo '</div>';
         echo '</div>';

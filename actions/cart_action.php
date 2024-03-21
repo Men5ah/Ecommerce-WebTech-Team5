@@ -243,11 +243,18 @@ function getCartCount()
 
         $cartCountStmt->close();
 
-        echo $cartCount;
-    }
+        // Check if $cartCount is null, indicating no items in the cart
+        if ($cartCount === null) {
+            $cartCount = 0; // Set cart count to 0
+        }
 
-    // return 0;
+        echo $cartCount;
+    } else {
+        // User is not logged in, return 0
+        echo "0";
+    }
 }
+
 
 // function getSubTotal()
 // {

@@ -120,7 +120,7 @@ function displayFashionProducts()
                 echo '<div class="col-lg-4 col-md-6 col-sm-6 pb-1">';
                 echo '<div class="product-item bg-light mb-4">';
                 echo '<div class="product-img position-relative overflow-hidden">';
-                echo '<img class="img-fluid w-100" src="' . $imageData . '" alt="' . $productName . '">';
+                echo '<img class="img-fluid w-100" src="data:image/jpeg;base64,' . base64_encode($imageData) . '" alt="' . $productName . '">';
                 echo '<div class="product-action">';
                 echo '<a class="btn btn-outline-dark btn-square" href="../details/detail 1.php?product_id=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>';
@@ -176,7 +176,7 @@ function displayStationeryProducts()
                 echo '<div class="col-lg-4 col-md-6 col-sm-6 pb-1">';
                 echo '<div class="product-item bg-light mb-4">';
                 echo '<div class="product-img position-relative overflow-hidden">';
-                echo '<img class="img-fluid w-100" src="' . $imageData . '" alt="' . $productName . '">';
+                echo '<img class="img-fluid w-100" src="data:image/jpeg;base64,' . base64_encode($imageData) . '" alt="' . $productName . '">';
                 echo '<div class="product-action">';
                 echo '<a class="btn btn-outline-dark btn-square" href="../details/detail 1.php?product_id=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>';
@@ -232,7 +232,7 @@ function displaySkincareProducts()
                 echo '<div class="col-lg-4 col-md-6 col-sm-6 pb-1">';
                 echo '<div class="product-item bg-light mb-4">';
                 echo '<div class="product-img position-relative overflow-hidden">';
-                echo '<img class="img-fluid w-100" src="' . $imageData . '" alt="' . $productName . '">';
+                echo '<img class="img-fluid w-100" src="data:image/jpeg;base64,' . base64_encode($imageData) . '" alt="' . $productName . '">';
                 echo '<div class="product-action">';
                 echo '<a class="btn btn-outline-dark btn-square" href="../details/detail 1.php?product_id=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>';
@@ -288,7 +288,7 @@ function displayFoodProducts()
                 echo '<div class="col-lg-4 col-md-6 col-sm-6 pb-1">';
                 echo '<div class="product-item bg-light mb-4">';
                 echo '<div class="product-img position-relative overflow-hidden">';
-                echo '<img class="img-fluid w-100" src="' . $imageData . '" alt="' . $productName . '">';
+                echo '<img class="img-fluid w-100" src="data:image/jpeg;base64,' . base64_encode($imageData) . '" alt="' . $productName . '">';
                 echo '<div class="product-action">';
                 echo '<a class="btn btn-outline-dark btn-square" href="../details/detail 1.php?product_id=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>';
@@ -344,7 +344,7 @@ function displayHygieneProducts()
                 echo '<div class="col-lg-4 col-md-6 col-sm-6 pb-1">';
                 echo '<div class="product-item bg-light mb-4">';
                 echo '<div class="product-img position-relative overflow-hidden">';
-                echo '<img class="img-fluid w-100" src="' . $imageData . '" alt="' . $productName . '">';
+                echo '<img class="img-fluid w-100" src="data:image/jpeg;base64,' . base64_encode($imageData) . '" alt="' . $productName . '">';
                 echo '<div class="product-action">';
                 echo '<a class="btn btn-outline-dark btn-square" href="../details/detail 1.php?product_id=' . $productId . '"><i class="fa fa-shopping-cart"></i></a>';
                 echo '<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>';

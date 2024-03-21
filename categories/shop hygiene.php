@@ -2,6 +2,7 @@
 include "../settings/connection.php";
 include "../actions/cart_action.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -82,9 +83,9 @@ include "../actions/cart_action.php";
                 </a>
             </div>
             <div class="col-lg-4 col-6 text-left">
-                <form action="">
+                <form action="../actions/search_action.php" method="POST">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for products">
+                        <input type="text" class="form-control" id="searchQuery" name="searchQuery" placeholder="Search for products">
                         <div class="input-group-append">
                             <span class="input-group-text bg-transparent text-primary">
                                 <i class="fa fa-search"></i>
