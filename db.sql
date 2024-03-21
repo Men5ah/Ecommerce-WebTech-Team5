@@ -31,19 +31,6 @@ CREATE TABLE Product (
     FOREIGN KEY (category_id) REFERENCES Categories(category_id)
 );
 
--- CREATE TABLE Product (
---     product_id INT PRIMARY KEY AUTO_INCREMENT,
---     name VARCHAR(255),
---     description TEXT,
---     price DECIMAL(10, 2),
---     quantity_available INT,
---     quantity_chosen INT,
---     category_id INT,
---     image_path VARCHAR(255),
---     FOREIGN KEY (category_id) REFERENCES Categories(category_id)
--- );
-
--- Inserting data into Categories table
 INSERT INTO Categories (category_id, name, description) VALUES
 (1, 'electronics', 'Electronic devices and gadgets'),
 (2, 'fashion', 'Clothing items for men and women'),
@@ -51,18 +38,6 @@ INSERT INTO Categories (category_id, name, description) VALUES
 (4, 'skincare', 'A variety of skincare products'),
 (5, 'fruits and Veggies', 'A variety of fruits and vegetables'),
 (6, 'hygiene', 'A variety of hygienic care products');
-
--- Inserting data into Product table
--- INSERT INTO Product (name, description, price, quantity_available, category_id, image_path) VALUES
--- ('Airpods', 'Latest model with advanced features', 499.99, 50, 1, '../FrontendEcomXpress/img/airpods.jpeg'),
--- ('Blender', 'Powerful laptop for work and entertainment', 1299.99, 30, 1, '../FrontendEcomXpress/img/blender.jpeg'),
--- ('Alterations', 'Comfortable cotton t-shirt', 19.99, 100, 2, '../FrontendEcomXpress/img/alteration.jpeg'),
--- ('Laundry', 'Classic denim jeans for men', 49.99, 80, 2, '../FrontendEcomXpress/img/laundry.webp'),
--- ('Bag', 'Exciting science fiction novel', 9.99, 120, 3, '../FrontendEcomXpress/img/bag.jpeg'),
--- ('Pens', 'Collection of delicious recipes', 14.99, 75, 3, '../FrontendEcomXpress/img/pens.jpeg'),
--- ('Bananas', 'Sweet and juicy watermelon', 5.99, 20, 5, '../FrontendEcomXpress/img/bananas.jpeg'),
--- ('Olay', 'Skin care powder for a fresh look', 29.99, 50, 4, '../FrontendEcomXpress/img/olay.jpeg'),
--- ('Nivea', 'Long-lasting protection against sweat', 8.99, 30, 6, '../FrontendEcomXpress/img/nivea.jpeg');
 
 -- CREATE TABLE Orders (
 --     order_id INT PRIMARY KEY AUTO_INCREMENT,

@@ -32,10 +32,6 @@
             <label for="location">Location</label>
             <input type="text" name="location" id="location" placeholder="Enter your location" required>
 
-            <!-- A new input field added for the role of the user (USer or Customer) -->
-            <!-- <label for="role">Role</label>
-            <input type="hidden" name="role_id" id="role_id"> -->
-
             <button type="submit" name="registerBtn" id="registerBtn">Register</button>
 
             <p>Already have an account? <a href="../views/login.php"> Login</a></p>

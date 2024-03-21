@@ -2,6 +2,7 @@
 include "../actions/display_detail_action.php";
 include "../actions/display_cart_action.php";
 include "../actions/display_search_action.php";
+include "../actions/cart_action.php";
 
 if (isset($_GET['product_id'])) {
     $productId = $_GET['product_id'];
@@ -90,9 +91,9 @@ if (isset($_GET['product_id'])) {
             </a>
         </div>
         <div class="col-lg-4 col-6 text-left">
-            <form action="">
+            <form action="../actions/search_action.php" method="POST">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for products">
+                    <input type="text" class="form-control" id="searchQuery" name="searchQuery" placeholder="Search for products">
                     <div class="input-group-append">
                         <span class="input-group-text bg-transparent text-primary">
                             <i class="fa fa-search"></i>
@@ -154,9 +155,11 @@ if (isset($_GET['product_id'])) {
                                 <i class="fas fa-heart text-primary"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
-                            <a href="" class="btn px-0 ml-3">
+                            <a href="../views/cart.php" class="btn px-0 ml-3">
                                 <i class="fas fa-shopping-cart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">
+                                    <?php getCartCount(); ?>
+                                </span>                            
                             </a>
                         </div>
                     </div>
@@ -168,116 +171,9 @@ if (isset($_GET['product_id'])) {
 
 
     <!-- Shop Detail Start -->
-    <div class="container-fluid pb-5">
-        <div class="row px-xl-5">
-            <div class="col-lg-5 mb-30">
-                <div id="product-carousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner bg-light">
-                        <div class="carousel-item active">
-                            <img class="w-100 h-100" src="../img/bag.jpeg" alt="Image">
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-lg-7 h-auto mb-30">
-                <div class="h-100 bg-light p-30">
-                    <!-- <h3>Brown Quilt bag</h3>
-                    <div class="d-flex mb-3">
-                        <div class="text-primary mr-2">
-                            <small class="fas fa-star"></small>
-                            <small class="fas fa-star"></small>
-                            <small class="fas fa-star"></small>
-                            <small class="fas fa-star-half-alt"></small>
-                            <small class="far fa-star"></small>
-                        </div>
-                        <small class="pt-1">(99 Reviews)</small>
-                    </div>
-                    <h3 class="font-weight-semi-bold mb-4">GHC150.00</h3>
-                    <p class="mb-4">A stylish bag to take you everywhere</p>
-                    <input type="hidden" name="product_id" value="<?php echo $productId; ?>">
-                    <div class="d-flex mb-3">
-                        <strong class="text-dark mr-3">Sizes:</strong>
-                        <form>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-1" name="size">
-                            <label class="custom-control-label" for="size-1">XS</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-2" name="size">
-                            <label class="custom-control-label" for="size-2">S</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-3" name="size">
-                            <label class="custom-control-label" for="size-3">M</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-4" name="size">
-                            <label class="custom-control-label" for="size-4">L</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-5" name="size">
-                            <label class="custom-control-label" for="size-5">XL</label>
-                        </div>
-                        </form>
-                    </div>
-                    <div class="d-flex mb-4">
-                        <strong class="text-dark mr-3">Colors:</strong>
-                        <form>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-1" name="color">
-                            <label class="custom-control-label" for="color-1">Black</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-2" name="color">
-                            <label class="custom-control-label" for="color-2">White</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-3" name="color">
-                            <label class="custom-control-label" for="color-3">Red</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-4" name="color">
-                            <label class="custom-control-label" for="color-4">Purple</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-5" name="color">
-                            <label class="custom-control-label" for="color-5">Green</label>
-                        </div>
-                        </form>
-                    </div> -->
-                    <!-- <div class="d-flex align-items-center mb-4 pt-2"> -->
-                    <!-- <div class="input-group quantity mr-3" style="width: 130px;">
-                                <div class="input-group-btn">
-                                    <form action="../actions/reduce_quantity_action.php" method="post">
-                                        <button class="btn btn-primary btn-minus" type="submit" name="product_id" value="
-                                        <?php
-                                        // echo $productId; 
-                                        ?>">
-                                            <i class="fa fa-minus"></i>
-                                        </button>
-                                    </form>
-                                </div>
-                                <input type="text" class="form-control bg-secondary border-0 text-center" value="1">
-                                <div class="input-group-btn">
-                                    <form action="../actions/increase_quantity_action.php" method="post">
-                                        <button class="btn btn-primary btn-plus" type="submit" name="product_id" value="
-                                        <?php
-                                        // echo $productId;
-                                        ?>">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </form>
-                                </div>
-                            </div> -->
                     <?php
                         displayProductDetails($productId);
                     ?>
-                    <!-- <button class="btn btn-primary px-3" type="submit"><i class="fa fa-shopping-cart mr-1"></i> Add To
-                                Cart</button>
-                        </div> -->
-                    <!-- </form> -->
                     <div class="d-flex pt-2">
                     <strong class="text-dark mr-2">Share on:</strong>
                         <div class="d-inline-flex">

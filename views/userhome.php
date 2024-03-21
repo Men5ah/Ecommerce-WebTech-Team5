@@ -1,8 +1,6 @@
 <?php
 include "../settings/core.php";
 include "../actions/cart_action.php";
-
-// include "../functions/select_cart.php";
 checkLogin();
 ?>
 

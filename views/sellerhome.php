@@ -1,8 +1,6 @@
 <?php
 include "../settings/core.php";
 include "../actions/cart_action.php";
-
-// include "../functions/select_cart.php";
 checkLogin();
 ?>
 
@@ -44,9 +42,15 @@ checkLogin();
             <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-toggle="dropdown">My Account</button>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <button class="dropdown-item" type="button">Sign in</button>
-                    <button class="dropdown-item" type="button">Sign up</button>
-                    <button class="dropdown-item" type="button">Help</button>
+                    <form action="../views/login.php" method="POST">
+                        <button class="dropdown-item" type="button">Sign in</button>
+                    </form>
+                    <form action="../views/register.php" method="POST">
+                        <button class="dropdown-item" type="button">Sign up</button>
+                    </form>
+                    <form action="../views/contact.php" method="POST">
+                        <button class="dropdown-item" type="button">Help</button>
+                    </form>
                 </div>
             </div>
             <div class="btn-group mx-2">
