@@ -10,33 +10,6 @@ if (isset($_GET['product_id'])) {
 }
 ?>
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirm Adding to Cart</title>
-</head>
-
-<body> -->
-
-<!-- Confirmation form -->
-<!-- <form id="product_id" action="../actions/cart_action.php" method="POST"> -->
-<!-- Include the hidden input field for productId -->
-<!-- <input name="product_id" value=" -->
-<?php
-//  echo $productId;
-?>
-<!-- "> -->
-
-<!-- Button to trigger confirmation -->
-<!-- <button type="submit" class="btn btn-outline-dark btn-square">Add to Cart</button>
-    </form>
-</body>
-
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -194,8 +167,6 @@ if (isset($_GET['product_id'])) {
     <!-- Navbar End -->
 
 
-
-
     <!-- Shop Detail Start -->
     <div class="container-fluid pb-5">
         <div class="row px-xl-5">
@@ -308,8 +279,8 @@ if (isset($_GET['product_id'])) {
                                 Cart</button>
                         </div> -->
                     <!-- </form> -->
-                    <!-- <div class="d-flex pt-2"> -->
-                    <!-- <strong class="text-dark mr-2">Share on:</strong>
+                    <div class="d-flex pt-2">
+                    <strong class="text-dark mr-2">Share on:</strong>
                         <div class="d-inline-flex">
                             <a class="text-dark px-2" href="">
                                 <i class="fab fa-facebook-f"></i>
@@ -323,8 +294,8 @@ if (isset($_GET['product_id'])) {
                             <a class="text-dark px-2" href="">
                                 <i class="fab fa-pinterest"></i>
                             </a>
-                        </div> -->
-                    <!-- </div> -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     VALUES ('$name', '$description', '$price', '$quantity_available', '$quantity_chosen', '$category_id', '../img/default image.jpg')";
 
     if ($conn->query($sql) === TRUE) {
-        // Insert successful, determine redirection based on category
         switch ($category_id) {
             case 1:
                 header("Location: ../categories/shop electronics.php");
@@ -34,21 +33,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: ../categories/shop hygiene.php");
                 exit;
             default:
-                // Handle other categories or provide a default redirection
-                if ($_SESSION['role_id'] == 1)
-                {
+                if ($_SESSION['role_id'] == 1) {
                     header("Location: ../views/sellerhome.php");
-                } 
-                else
-                {
+                } else {
                     header("Location: ../views/userhome.php");
                 }
-                exit;
+                exit();
         }
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
     $conn->close();
 } elseif (isset($_GET["skip"]) && $_GET["skip"] == "true") {
     header("Location: ../views/home.php?No additions=true");
