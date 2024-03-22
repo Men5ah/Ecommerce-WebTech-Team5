@@ -1,5 +1,5 @@
 <?php
-include "../settings/connection.php";
+include_once "../settings/connection.php";
 include "../settings/core.php";
 
 if (isset($_POST['product_id'])) {

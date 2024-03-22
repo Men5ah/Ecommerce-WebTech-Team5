@@ -8,6 +8,6 @@ EcomXpress is a web application that is useful for shopping for items if you liv
 4. Our site does not process payments however, so the user flow ends here.
 
 # Links
-Live Server: 
+Live Server: http://18.133.105.236/Ecommerce-WebTech-Team5/views/login.php
 GitHub: https://github.com/Men5ah/Ecommerce-WebTech-Team5
 CMS: https://letteyregina2002.wixsite.com/e-comxpress

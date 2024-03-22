@@ -1,5 +1,5 @@
 <?php
-include "../settings/connection.php";
+include_once "../settings/connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['product_id'])) {
     $cartId = $_POST['product_id'];

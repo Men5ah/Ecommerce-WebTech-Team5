@@ -2,7 +2,7 @@
 
 function displayElectronicProducts()
 {
-    include "../settings/connection.php";
+    include_once "../settings/connection.php";
 
     $sql = "SELECT * FROM Product WHERE category_id = 1";
 
@@ -101,7 +101,7 @@ function displayElectronicProducts()
 
 function displayFashionProducts()
 {
-    include "../settings/connection.php";
+    include_once "../settings/connection.php";
 
     $sql = "SELECT * FROM Product WHERE category_id = 2";
 
@@ -157,7 +157,7 @@ function displayFashionProducts()
 
 function displayStationeryProducts()
 {
-    include "../settings/connection.php";
+    include_once "../settings/connection.php";
 
     $sql = "SELECT * FROM Product WHERE category_id = 3";
 
@@ -213,7 +213,7 @@ function displayStationeryProducts()
 
 function displaySkincareProducts()
 {
-    include "../settings/connection.php";
+    include_once "../settings/connection.php";
 
     $sql = "SELECT * FROM Product WHERE category_id = 4";
 
@@ -269,7 +269,7 @@ function displaySkincareProducts()
 
 function displayFoodProducts()
 {
-    include "../settings/connection.php";
+    include_once "../settings/connection.php";
 
     $sql = "SELECT * FROM Product WHERE category_id = 5";
 
@@ -325,7 +325,7 @@ function displayFoodProducts()
 
 function displayHygieneProducts()
 {
-    include "../settings/connection.php";
+    include_once "../settings/connection.php";
 
     $sql = "SELECT * FROM Product WHERE category_id = 6";
 

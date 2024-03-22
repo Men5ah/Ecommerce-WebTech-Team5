@@ -1,8 +1,20 @@
 <?php
+include_once "../settings/core.php";
+include_once "../settings/connection.php";
+// include_once "../actions/login_action.php";
+
+
+if (isset($_SESSION['user_id'])) {
+    $userId = $_SESSION['user_id'];
+    // Your other code
+} else {
+    // Handle the case when the user is not logged in
+    echo "User not logged in.";
+}
 
 function displayCartItems()
 {
-    include "../settings/connection.php";
+    include_once "../settings/connection.php";
     $userId = $_SESSION['user_id'];
 
     $cartQuery = "SELECT c.cart_id, p.product_id, p.name AS product_name, p.price, p.quantity_chosen AS quantity
@@ -70,7 +82,7 @@ function displayCartItems()
 
 function displaySubTotal()
 {
-    include "../settings/connection.php";
+    include_once "../settings/connection.php";
     $userId = $_SESSION['user_id'];
 
     $cartQuery = "SELECT c.cart_id, p.product_id, p.name AS product_name, p.price, p.quantity_chosen AS quantity
@@ -98,7 +110,7 @@ function displaySubTotal()
 
 function displayShipping()
 {
-    include "../settings/connection.php";
+    include_once "../settings/connection.php";
     $userId = $_SESSION['user_id'];
 
     $cartQuery = "SELECT c.cart_id, p.product_id, p.name AS product_name, p.price, p.quantity_chosen AS quantity
@@ -125,7 +137,7 @@ function displayShipping()
 
 function displayTotal()
 {
-    include "../settings/connection.php";
+    include_once "../settings/connection.php";
     $userId = $_SESSION['user_id'];
 
     $cartQuery = "SELECT c.cart_id, p.product_id, p.name AS product_name, p.price, p.quantity_chosen AS quantity
