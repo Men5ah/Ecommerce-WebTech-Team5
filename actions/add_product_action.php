@@ -5,15 +5,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $description = $_POST["description"];
     $price = $_POST["price"];
-    $quantity = $_POST["quantity"];
-    $category_id = $_POST["category"];
+    $quantity_available = $_POST["quantity"];
+    $quantity_chosen = 0;
+    $categoryID = $_POST["category"];
+    // $imageData = $_POST["image_data"];
 
-    $sql = "INSERT INTO Product (name, description, price, quantity_available, category_id, image_path)
-    VALUES ('$name', '$description', $price, $quantity, $category_id, '../img/default image.jpg')";
+    // Process image upload
+    $imageData = file_get_contents($_FILES["image_path"]["tmp_name"]);
+    $imageData = mysqli_real_escape_string($conn, $imageData);
+
+    $sql = "INSERT INTO Product (name, description, price, quantity_available, quantity_chosen, category_id, image_data)
+    VALUES ('$name', '$description', '$price', '$quantity_available', '$quantity_chosen', '$categoryID', '$imageData')";
 
     if ($conn->query($sql) === TRUE) {
-        // Insert successful, determine redirection based on category
-        switch ($category_id) {
+        switch ($categoryID) {
             case 1:
                 header("Location: ../categories/shop electronics.php");
                 exit;
@@ -33,24 +38,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: ../categories/shop hygiene.php");
                 exit;
             default:
-                // Handle other categories or provide a default redirection
-                if ($_SESSION['role_id'] == 1)
-                {
+                if ($_SESSION['role_id'] == 1) {
                     header("Location: ../views/sellerhome.php");
-                } 
-                else
-                {
+                } else {
                     header("Location: ../views/userhome.php");
                 }
-                exit;
+                exit();
         }
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
     $conn->close();
 } elseif (isset($_GET["skip"]) && $_GET["skip"] == "true") {
-    header("Location: ../views/home.php?No additions=true");
+    header("Location: ../views/sellerhome.php?No additions=true");
     exit();
 } else {
     echo "POST REQUEST WAS NOT SENT";

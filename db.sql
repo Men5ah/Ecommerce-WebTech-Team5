@@ -37,10 +37,23 @@ CREATE TABLE Product (
     description TEXT,
     price DECIMAL(10, 2),
     quantity_available INT,
+    quantity_chosen INT,
     category_id INT,
-    image_path VARCHAR(255),
+    image_data MEDIUMBLOB,
     FOREIGN KEY (category_id) REFERENCES Categories(category_id)
 );
+
+-- CREATE TABLE Product (
+--     product_id INT PRIMARY KEY AUTO_INCREMENT,
+--     name VARCHAR(255),
+--     description TEXT,
+--     price DECIMAL(10, 2),
+--     quantity_available INT,
+--     quantity_chosen INT,
+--     category_id INT,
+--     image_path VARCHAR(255),
+--     FOREIGN KEY (category_id) REFERENCES Categories(category_id)
+-- );
 
 -- Inserting data into Categories table
 INSERT INTO Categories (category_id, name, description) VALUES

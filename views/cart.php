@@ -1,9 +1,8 @@
 <?php
 include "../settings/core.php";
 include "../actions/display_cart_action.php";
-
-// include "../functions/select_cart.php";
-// checkLogin();
+include "../actions/cart_action.php";
+checkLogin();
 ?>
 
 <!DOCTYPE html>
@@ -150,7 +149,9 @@ include "../actions/display_cart_action.php";
 
                             <a href="" class="btn px-0 ml-3">
                                 <i class="fas fa-shopping-cart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">
+                                    <?php getCartCount(); ?>
+                                </span>
                             </a>
                         </div>
                     </div>
@@ -179,7 +180,6 @@ include "../actions/display_cart_action.php";
                     <tbody class="align-middle">
                         <tr>
                             <?php
-                            // include "../actions/display_cart_action.php";
                             displayCartItems();
                             ?>
                         </tr>
@@ -201,17 +201,14 @@ include "../actions/display_cart_action.php";
                         <div class="d-flex justify-content-between mb-3">
                             <h6>Subtotal</h6>
                             <?php
-                            // include "../actions/display_cart_action.php";
                             displaySubTotal();
                             ?>
-                            <!-- <h6>$150</h6> -->
                         </div>
                         <div class="d-flex justify-content-between">
                             <h6 class="font-weight-medium">Shipping</h6>
                             <?php
                             displayShipping();
                             ?>
-                            <!-- <h6 class="font-weight-medium">$10</h6> -->
                         </div>
                     </div>
                     <div class="pt-2">
@@ -220,7 +217,6 @@ include "../actions/display_cart_action.php";
                             <?php
                             displayTotal();
                             ?>
-                            <!-- <h5>$160</h5> -->
                         </div>
                         <button class="btn btn-block btn-primary font-weight-bold my-3 py-3" onclick="window.location.href = 'checkout.php';">Proceed To Checkout</button>
                     </div>
