@@ -1,7 +1,6 @@
 <?php
 include "../settings/core.php";
 include "../functions/select_cart.php";
-include "../actions/cart_action.php";
 checkLogin();
 ?>
 
@@ -149,10 +148,7 @@ checkLogin();
 
                             <a href="cart.php" class="btn px-0 ml-3">
                                 <i class="fas fa-shopping-cart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">
-                                    <?php getCartCount(); ?>
-                                </span>
-                                <!-- <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span> -->
+                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                             </a>
                         </div>
                     </div>

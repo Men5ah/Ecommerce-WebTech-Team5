@@ -1,7 +1,7 @@
 <?php
 include "../settings/connection.php";
 
-$sql = "SELECT * FROM Categories";
+$sql = "SELECT * FROM categories";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

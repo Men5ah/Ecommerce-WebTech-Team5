@@ -3,12 +3,39 @@ include "../actions/display_detail_action.php";
 include "../actions/display_cart_action.php";
 include "../actions/display_search_action.php";
 
-if (isset($_GET['product_id'])) {
+if (isset($_GET['product_id']) ) {
     $productId = $_GET['product_id'];
 } else {
     echo "Product ID not provided in the URL.";
 }
 ?>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Adding to Cart</title>
+</head>
+
+<body> -->
+
+<!-- Confirmation form -->
+<!-- <form id="product_id" action="../actions/cart_action.php" method="POST"> -->
+<!-- Include the hidden input field for productId -->
+<!-- <input name="product_id" value=" -->
+<?php
+//  echo $productId;
+?>
+<!-- "> -->
+
+<!-- Button to trigger confirmation -->
+<!-- <button type="submit" class="btn btn-outline-dark btn-square">Add to Cart</button>
+    </form>
+</body>
+
+</html> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -167,6 +194,8 @@ if (isset($_GET['product_id'])) {
     <!-- Navbar End -->
 
 
+
+
     <!-- Shop Detail Start -->
     <div class="container-fluid pb-5">
         <div class="row px-xl-5">
@@ -183,7 +212,7 @@ if (isset($_GET['product_id'])) {
 
             <div class="col-lg-7 h-auto mb-30">
                 <div class="h-100 bg-light p-30">
-                    <!-- <h3>Brown Quilt bag</h3>
+                    <h3>Brown Quilt bag</h3>
                     <div class="d-flex mb-3">
                         <div class="text-primary mr-2">
                             <small class="fas fa-star"></small>
@@ -196,63 +225,64 @@ if (isset($_GET['product_id'])) {
                     </div>
                     <h3 class="font-weight-semi-bold mb-4">GHC150.00</h3>
                     <p class="mb-4">A stylish bag to take you everywhere</p>
-                    <input type="hidden" name="product_id" value="<?php echo $productId; ?>">
-                    <div class="d-flex mb-3">
-                        <strong class="text-dark mr-3">Sizes:</strong>
-                        <form>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-1" name="size">
-                            <label class="custom-control-label" for="size-1">XS</label>
+                    <!-- <form id="product_id" action="" method="POST"> -->
+                        <input type="hidden" name="product_id" value="<?php echo $productId; ?>">
+                        <div class="d-flex mb-3">
+                            <strong class="text-dark mr-3">Sizes:</strong>
+                            <!-- <form> -->
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-1" name="size">
+                                <label class="custom-control-label" for="size-1">XS</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-2" name="size">
+                                <label class="custom-control-label" for="size-2">S</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-3" name="size">
+                                <label class="custom-control-label" for="size-3">M</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-4" name="size">
+                                <label class="custom-control-label" for="size-4">L</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="size-5" name="size">
+                                <label class="custom-control-label" for="size-5">XL</label>
+                            </div>
+                            <!-- </form> -->
                         </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-2" name="size">
-                            <label class="custom-control-label" for="size-2">S</label>
+                        <div class="d-flex mb-4">
+                            <strong class="text-dark mr-3">Colors:</strong>
+                            <!-- <form> -->
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="color-1" name="color">
+                                <label class="custom-control-label" for="color-1">Black</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="color-2" name="color">
+                                <label class="custom-control-label" for="color-2">White</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="color-3" name="color">
+                                <label class="custom-control-label" for="color-3">Red</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="color-4" name="color">
+                                <label class="custom-control-label" for="color-4">Purple</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" class="custom-control-input" id="color-5" name="color">
+                                <label class="custom-control-label" for="color-5">Green</label>
+                            </div>
+                            <!-- </form> -->
                         </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-3" name="size">
-                            <label class="custom-control-label" for="size-3">M</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-4" name="size">
-                            <label class="custom-control-label" for="size-4">L</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-5" name="size">
-                            <label class="custom-control-label" for="size-5">XL</label>
-                        </div>
-                        </form>
-                    </div>
-                    <div class="d-flex mb-4">
-                        <strong class="text-dark mr-3">Colors:</strong>
-                        <form>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-1" name="color">
-                            <label class="custom-control-label" for="color-1">Black</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-2" name="color">
-                            <label class="custom-control-label" for="color-2">White</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-3" name="color">
-                            <label class="custom-control-label" for="color-3">Red</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-4" name="color">
-                            <label class="custom-control-label" for="color-4">Purple</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-5" name="color">
-                            <label class="custom-control-label" for="color-5">Green</label>
-                        </div>
-                        </form>
-                    </div> -->
-                    <!-- <div class="d-flex align-items-center mb-4 pt-2"> -->
-                    <!-- <div class="input-group quantity mr-3" style="width: 130px;">
+                        <!-- <div class="d-flex align-items-center mb-4 pt-2"> -->
+                            <!-- <div class="input-group quantity mr-3" style="width: 130px;">
                                 <div class="input-group-btn">
                                     <form action="../actions/reduce_quantity_action.php" method="post">
                                         <button class="btn btn-primary btn-minus" type="submit" name="product_id" value="
-                                        <?php
+                                        <?php 
                                         // echo $productId; 
                                         ?>">
                                             <i class="fa fa-minus"></i>
@@ -271,15 +301,15 @@ if (isset($_GET['product_id'])) {
                                     </form>
                                 </div>
                             </div> -->
-                    <?php
-                        displayProductDetails($productId);
-                    ?>
-                    <!-- <button class="btn btn-primary px-3" type="submit"><i class="fa fa-shopping-cart mr-1"></i> Add To
+                            <?php
+                            displayDetailItems()
+                            ?>
+                            <!-- <button class="btn btn-primary px-3" type="submit"><i class="fa fa-shopping-cart mr-1"></i> Add To
                                 Cart</button>
                         </div> -->
                     <!-- </form> -->
-                    <div class="d-flex pt-2">
-                    <strong class="text-dark mr-2">Share on:</strong>
+                    <!-- <div class="d-flex pt-2"> -->
+                        <!-- <strong class="text-dark mr-2">Share on:</strong>
                         <div class="d-inline-flex">
                             <a class="text-dark px-2" href="">
                                 <i class="fab fa-facebook-f"></i>
@@ -293,8 +323,8 @@ if (isset($_GET['product_id'])) {
                             <a class="text-dark px-2" href="">
                                 <i class="fab fa-pinterest"></i>
                             </a>
-                        </div>
-                    </div>
+                        </div> -->
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
