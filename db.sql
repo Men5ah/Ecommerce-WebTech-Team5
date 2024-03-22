@@ -13,6 +13,14 @@ CREATE TABLE Person (
     role_id INT
 );
 
+CREATE TABLE Location (
+    location_id INT PRIMARY KEY AUTO_INCREMENT,
+    address VARCHAR(255),
+    city VARCHAR(30), 
+    state CHAR(2),
+    zip CHAR(5)
+);
+
 CREATE TABLE Categories (
     category_id INT PRIMARY KEY,
     name VARCHAR(255),
