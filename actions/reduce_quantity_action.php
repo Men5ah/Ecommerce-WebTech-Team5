@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 // include "../settings/connection.php";
 
 // session_start();
@@ -35,6 +36,8 @@
 // }
 
 
+=======
+>>>>>>> cf0269fa4fcb7ad59311f49d900845c208b548a7
 include "../settings/connection.php";
 
 session_start();
@@ -44,12 +47,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $productID = $_POST['product_id'];
         $userID = $_SESSION['user_id'];
 
+<<<<<<< HEAD
         // Perform the reduction in the database
+=======
+>>>>>>> cf0269fa4fcb7ad59311f49d900845c208b548a7
         $reduceQuery = "UPDATE Carts SET quantity = quantity - 1 WHERE product_id = ? AND user_id = ?";
         $reduceStmt = $conn->prepare($reduceQuery);
         $reduceStmt->bind_param("ii", $productID, $userID);
         $reduceStmt->execute();
 
+<<<<<<< HEAD
         // Close the statement
         $reduceStmt->close();
 
@@ -69,3 +76,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 else {
     echo "Error";
 }
+=======
+        $reduceStmt->close();
+
+        header('Location: ../views/cart.php');
+        exit();
+    }
+}
+
+>>>>>>> cf0269fa4fcb7ad59311f49d900845c208b548a7
