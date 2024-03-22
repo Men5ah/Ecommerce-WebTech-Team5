@@ -1,69 +1,63 @@
-document.getElementById('firstName').addEventListener('input', validateAndDisplayMessage);
-document.getElementById('lastName').addEventListener('input', validateAndDisplayMessage);
-document.getElementById('registrationForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent form submission to check validation first
-    validateForm();
+const firstName = document.getElementById('firstName');
+const nameReg = /^[^\d\s]+$/;
+const lastName = document.getElementById('lastName');
+const email = document.getElementById('email');
+const emailReg = /^[^\s@]+@[^\s@]+\.[a-zA-Z]+$/;
+const password = document.getElementById('password');
+const rePassword = document.getElementById('re-password');
+const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+const phone = document.getElementById('phone');
+const phoneRegex = /^(\+\d{1,3}[\s-]?)?(\(\d{2,3}\)[\s-]?)?[\d\s-]{6,}$/;
+const btn = document.getElementById('registerBtn');
+
+btn.addEventListener( "click", function(event){
+    validateNames(event)
+    validateEmail(event)
+    validatePasswords(event)
+    validatePhone(event)
 });
 
-function validateAndDisplayMessage() {
-    // Validation logic for first_name field
-    var firstName = document.getElementById('firstName').value.trim();
-    var firstNameRegex = /^[a-zA-Z\s]+$/;
-
-    if (!firstNameRegex.test(firstName)) {
-        showMessage('Invalid first name. Only letters and spaces are allowed.', 'red');
-    } else {
-        showMessage('', 'green');
+function validateNames(event){
+    if(firstName.value == '' || lastName.value == ''){
+        alert("Enter your names")
+        event.preventDefault();
+    } else if (!nameReg.test(firstName.value) && !nameReg.test(lastName.value)) {
+        alert("Use only letters and special characters for your names. No spaces");
+        event.preventDefault();
+    }
+}
+function validateEmail(event){
+    if(email.value == ""){
+        alert("Please enter an e-mail address.")
+        event.preventDefault();
+    } else if(!emailReg.test(email.value)){
+        alert("Please enter a valid e-mail address.");
+        event.preventDefault();
     }
 }
 
-function validateForm() {
-    // Validation for last_name
-    var lastName = document.getElementById('lastName').value.trim();
-    var lastNameRegex = /^[a-zA-Z\s]+$/;
-    if (!lastNameRegex.test(lastName)) {
-        showMessage('Invalid last name. Only letters and spaces are allowed.', 'red');
-        return;
+function validatePasswords(event){
+    if(password.value==''){
+        alert("Please enter a password")
+        event.preventDefault();
+    } else if(!passwordRegex.test(password.value)){
+        alert("Password must be at least 8 characters long and include a capital letter, a number, and a symbol.")
+        event.preventDefault();
     }
 
+    if(password.value!=rePassword.value){
+        alert("Your passwords don't match.")
+        event.preventDefault();
     }
-    // Validation for phone
-    var phone = document.getElementById('phone').value.trim();
-    var phoneRegex = /^\d{14}$/;
-    if (!phoneRegex.test(phone)) {
-        showMessage('Invalid phone number. Please enter a 10-digit number.', 'red');
-        return;
-    }
+}
 
-    var email = document.getElementById('email').value.trim();
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]+$/; 
-    if (!emailRegex.test(email)) {
-        showMessage('Invalid email address.', 'red');
-        return;
+function validatePhone(event){
+    if(phone.value==''){
+        console.log(phone.value);
+        alert("Please enter a phone number")
+        event.preventDefault();
+    } else if(!phoneRegex.test(phone.value)){
+        alert("Please enter a valid phone number")
+        event.preventDefault();
     }
-    // Validation for password
-    var password1 = document.getElementById('password').value;
-    var password2 = document.getElementById('re-password').value;
-    var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    if (!passwordRegex.test(password1)) {
-        showMessage('Password must be at least 8 characters long and include a capital letter, a number, and a symbol.', 'red');
-        return;
-    }
-    if (password1 !== password2) {
-        showMessage('Passwords do not match.', 'red');
-        return;
-    }
-
-    // All validations pass
-    showMessage('Registration successful!', 'green');
-
-function showMessage(message, color) {
-    var messageElement = document.getElementById('message');
-    messageElement.innerHTML = message;
-    messageElement.style.color = color;
-
-    // Show the message on the page
-    setTimeout(function() {
-        messageElement.innerHTML = '';
-    }, 3000); // Clear the message after 3 seconds
 }
