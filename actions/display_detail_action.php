@@ -25,6 +25,7 @@ function displayProductDetails($productId)
         echo '<div class="carousel-item active">';
         // echo '<img class="w-100 h-100" src="../img/product-' . $productId . '.jpeg" alt="Image">';
         echo '<img class="img-fluid w-100" src="data:image/jpeg;base64,' . base64_encode($imageData) . '" alt="' . $productName . '">';
+
         echo '</div>';
         echo '</div>';
         echo '</div>';

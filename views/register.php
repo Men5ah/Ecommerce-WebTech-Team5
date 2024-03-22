@@ -1,5 +1,5 @@
 <?php
-include "../functions/select_location_fxn.php";
+include "../functions/select_location.php";
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +10,7 @@ include "../functions/select_location_fxn.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="../css/register.css">
+    <script src="../js/register.js" defer></script>
 </head>
 
 <body>
@@ -35,23 +36,23 @@ include "../functions/select_location_fxn.php";
             <input type="tel" name="phone" id="phone" placeholder="Enter your phone number" required>
 
             <label for="location">Location</label>
-            <!-- <input type="text" name="location" id="location" placeholder="Enter your location" required> -->
-            <select name="location", id="location">
-                <?php foreach($locations as $location):?>
-                <option value="<?php echo $location['lid'];?>"><?php echo $location['location'];?></option>
+            <select name="location" id="location" required>
+                <option value="" disabled selected>Select your location</option>
+                <?php
+                $locations = getLocations();
+                foreach ($locations as $location) :
+                ?>
+                    <option value="<?php echo $location['location_id']; ?>">
+                        <?php echo $location['address'] . ', ' . $location['city'] . ', ' . $location['state'] . ' ' . $location['zip']; ?>
+                    </option>
                 <?php endforeach; ?>
             </select>
-
-            <!-- A new input field added for the role of the user (USer or Customer) -->
-            <!-- <label for="role">Role</label>
-            <input type="hidden" name="role_id" id="role_id"> -->
 
             <button type="submit" name="registerBtn" id="registerBtn">Register</button>
 
             <p>Already have an account? <a href="../views/login.php"> Login</a></p>
         </form>
     </div>
-    <script src="../js/register.js" defer></script>
 </body>
 
 </html>
