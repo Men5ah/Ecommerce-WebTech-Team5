@@ -1,3 +1,7 @@
+<?php
+include "../functions/select_location_fxn.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,11 +30,19 @@
             <label for="password">Password</label>
             <input type="password" name="Password" id="password" placeholder="Enter your password" required>
 
+            <label for="password">Re-Enter Password</label>
+            <input type="password" name="Re-Password" id="re-password" placeholder="Re-Enter your password" required>
+
             <label for="phone">Phone Number</label>
             <input type="tel" name="phone" id="phone" placeholder="Enter your phone number" required>
 
             <label for="location">Location</label>
-            <input type="text" name="location" id="location" placeholder="Enter your location" required>
+            <!-- <input type="text" name="location" id="location" placeholder="Enter your location" required> -->
+            <select name="location", id="location">
+                <?php foreach($locations as $location):?>
+                <option value="<?php echo $location['lid'];?>"><?php echo $location['location'];?></option>
+                <?php endforeach; ?>
+            </select>
 
             <button type="submit" name="registerBtn" id="registerBtn">Register</button>
 

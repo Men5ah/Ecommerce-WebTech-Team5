@@ -159,7 +159,7 @@ checkLogin();
                             <a href="../views/cart.php" class="btn px-0 ml-3">
                                 <i class="fas fa-shopping-cart text-primary"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">
-                                    <?php getCartCount(); ?>
+                                    <?php echo getCartCount(); ?>
                                 </span>
                             </a>
                         </div>
@@ -323,6 +323,7 @@ checkLogin();
                     </div>
                 </a>
             </div>
+
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <a class="text-decoration-none" href="../categories/shop hygiene.php">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
@@ -349,6 +350,7 @@ checkLogin();
                     </div>
                 </a>
             </div>
+
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <a class="text-decoration-none" href="../categories/shop electronics.php">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
