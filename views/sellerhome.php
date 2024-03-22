@@ -283,11 +283,7 @@ checkLogin();
                     </div>
                 </a>
             </div>
-<<<<<<< HEAD
             <!-- <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-=======
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
->>>>>>> cf0269fa4fcb7ad59311f49d900845c208b548a7
                 <a class="text-decoration-none" href="../categories/shop electronics.php">
 
                 </a>
@@ -296,11 +292,7 @@ checkLogin();
                 <a class="text-decoration-none" href="../categories/shop 2.php">
 
                 </a>
-<<<<<<< HEAD
             </div> -->
-=======
-            </div>
->>>>>>> cf0269fa4fcb7ad59311f49d900845c208b548a7
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <a class="text-decoration-none" href="../categories/shop skincare.php">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
@@ -327,16 +319,7 @@ checkLogin();
                     </div>
                 </a>
             </div>
-<<<<<<< HEAD
 
-=======
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-
-            </div>
->>>>>>> cf0269fa4fcb7ad59311f49d900845c208b548a7
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <a class="text-decoration-none" href="../categories/shop hygiene.php">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
@@ -363,16 +346,7 @@ checkLogin();
                     </div>
                 </a>
             </div>
-<<<<<<< HEAD
 
-=======
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-
-            </div>
->>>>>>> cf0269fa4fcb7ad59311f49d900845c208b548a7
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <a class="text-decoration-none" href="../categories/shop electronics.php">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
