@@ -13,13 +13,25 @@ CREATE TABLE Person (
     role_id INT
 );
 
-CREATE TABLE Location (
+CREATE TABLE Locations (
     location_id INT PRIMARY KEY AUTO_INCREMENT,
     address VARCHAR(255),
     city VARCHAR(30), 
     state CHAR(2),
     zip CHAR(5)
 );
+
+INSERT INTO Locations (address, city, state, zip) VALUES
+('123 Main St', 'Springfield', 'IL', '62704'),
+('456 Elm St', 'Shelbyville', 'IN', '46176'),
+('789 Oak St', 'Oakland', 'CA', '94601'),
+('101 Pine St', 'Portland', 'OR', '97201'),
+('202 Maple St', 'Madison', 'WI', '53703'),
+('303 Cedar St', 'Cedar Rapids', 'IA', '52401'),
+('404 Birch St', 'Birmingham', 'AL', '35203'),
+('505 Ash St', 'Asheville', 'NC', '28801'),
+('606 Pineapple St', 'Pittsburgh', 'PA', '15201'),
+('707 Cherry St', 'Chattanooga', 'TN', '37402');
 
 CREATE TABLE Categories (
     category_id INT PRIMARY KEY,
