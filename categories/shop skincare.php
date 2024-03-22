@@ -1,3 +1,8 @@
+<?php
+include "../settings/connection.php";
+include "../actions/cart_action.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,9 +83,9 @@
                 </a>
             </div>
             <div class="col-lg-4 col-6 text-left">
-                <form action="">
+                <form action="../actions/search_action.php" method="POST">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for products">
+                        <input type="text" class="form-control" id="searchQuery" name="searchQuery" placeholder="Search for products">
                         <div class="input-group-append">
                             <span class="input-group-text bg-transparent text-primary">
                                 <i class="fa fa-search"></i>
@@ -145,7 +150,9 @@
                             </a>
                             <a href="../views/cart.php" class="btn px-0 ml-3">
                                 <i class="fas fa-shopping-cart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">
+                                    <?php getCartCount(); ?>
+                                </span>                            
                             </a>
                         </div>
                     </div>

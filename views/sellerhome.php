@@ -155,7 +155,7 @@ checkLogin();
                             <a href="../views/cart.php" class="btn px-0 ml-3">
                                 <i class="fas fa-shopping-cart text-primary"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">
-                                    <?php echo getCartCount(); ?>
+                                    <?php getCartCount(); ?>
                                 </span>
                             </a>
                         </div>
@@ -283,7 +283,7 @@ checkLogin();
                     </div>
                 </a>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <!-- <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <a class="text-decoration-none" href="../categories/shop electronics.php">
 
                 </a>
@@ -292,7 +292,7 @@ checkLogin();
                 <a class="text-decoration-none" href="../categories/shop 2.php">
 
                 </a>
-            </div>
+            </div> -->
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <a class="text-decoration-none" href="../categories/shop skincare.php">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
@@ -320,12 +320,6 @@ checkLogin();
                 </a>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <a class="text-decoration-none" href="../categories/shop hygiene.php">
                     <div class="cat-item img-zoom d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 250px; height: 200px;">
@@ -350,12 +344,6 @@ checkLogin();
                         </div>
                     </div>
                 </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <a class="text-decoration-none" href="../categories/shop electronics.php">

@@ -1,5 +1,5 @@
 <?php
-require_once "../settings/core.php";
+include "../settings/core.php";
 include "../actions/cart_action.php";
 
 // include "../functions/select_cart.php";

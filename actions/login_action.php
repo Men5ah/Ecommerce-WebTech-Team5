@@ -11,7 +11,7 @@ if (isset($_POST['email']) && isset($_POST['Password'])) {
     $password = $_POST['Password'];
 
     // Use prepared statement for SELECT
-    $sql = "SELECT * FROM person WHERE email = ?";
+    $sql = "SELECT * FROM Person WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();

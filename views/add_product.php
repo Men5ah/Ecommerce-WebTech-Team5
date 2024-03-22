@@ -1,7 +1,6 @@
 <?php
 include "../settings/core.php";
 include "../functions/select_category.php";
-// redirectID();
 checkLogin();
 ?>
 
@@ -17,7 +16,7 @@ checkLogin();
 
 <body>
     <h1>Add Product</h1>
-    <form action="../actions/add_product_action.php" method="POST">
+    <form action="../actions/add_product_action.php" method="POST" enctype="multipart/form-data">
         <label for="name">Product Name:</label>
         <input type="text" name="name" required><br>
 
@@ -39,9 +38,13 @@ checkLogin();
         <label for="quantity">Quantity Available:</label>
         <input type="text" name="quantity" required><br>
 
+        <label for="image">Image:</label>
+        <input type="file" name="image_path" accept="image/*" required><br>
+
         <input type="submit" value="Add Product">
         <a href="../actions/add_product_action.php?skip=true">SKIP</a>
     </form>
+
 </body>
 
 </html>

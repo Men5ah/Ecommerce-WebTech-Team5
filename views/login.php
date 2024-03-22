@@ -29,4 +29,4 @@
 
 </html>
 
-<!-- http://localhost/Web Technologies Team Folder/GitHub/Ecommerce-WebTech-Team5/views/login.php -->
+<!-- http://localhost/Web Technologies Team Folder/Ecommerce-WebTech-Team5/views/login.php -->
