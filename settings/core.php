@@ -1,10 +1,11 @@
 <?php
 session_start();
 
-function checkLogin()
+function ifLoggedIn()
 {
     if (!($_SESSION['user_id'])) {
         header("Location: ../login/login_view.php");
         die();
     }
 }
+ifLoggedIn();

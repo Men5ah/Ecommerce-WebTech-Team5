@@ -1,12 +1,9 @@
 <?php
-// $SERVER = 'localhost';
-// $USERNAME = 'root';
-// $PSSWRD =  'cs341webtech';
-// $DATABASE = 'Commerce';
-$SERVER = 'localhost';
-$USERNAME = 'root';
-$PSSWRD =  '';
-$DATABASE = 'Commerce';
+$servername = 'localhost';
+$username = 'root';
+$password =  'cs341webtech';
+$database = 'Commerce';
+
 $conn = new mysqli($SERVER, $USERNAME, $PSSWRD, $DATABASE);
 
 if ($conn->connect_error) {

@@ -10,6 +10,8 @@ include "../functions/select_location_fxn.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="../css/register.css">
+
+    <script src="../js/register.js" defer></script>
 </head>
 
 <body>
@@ -51,7 +53,7 @@ include "../functions/select_location_fxn.php";
             <p>Already have an account? <a href="../views/login.php"> Login</a></p>
         </form>
     </div>
-    <script src="../js/register.js" defer></script>
+
 </body>
 
 </html>
