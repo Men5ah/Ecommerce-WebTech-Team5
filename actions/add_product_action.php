@@ -55,3 +55,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     echo "POST REQUEST WAS NOT SENT";
 }
+
+// Issue
